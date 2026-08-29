@@ -1,11 +1,14 @@
 import { ArrowUpRight, Star } from "@phosphor-icons/react";
 import { buildSignupUrl } from "../data/providers";
+import { useI18n } from "../i18n";
 
 /**
- * A single provider "ticket". Presentational - receives the provider object.
- * One CTA intent: "Open route". No duplicate-intent CTAs.
+ * A single gateway card. Presentational - receives the provider object.
+ * Name, description, tags and category stay in their source language because
+ * they are facts about the service, not UI copy.
  */
 export default function ProviderCard({ provider }) {
+  const { t } = useI18n();
   const url = buildSignupUrl(provider);
   const tagToShow = provider.tags[0];
 
@@ -19,7 +22,7 @@ export default function ProviderCard({ provider }) {
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 z-10 rounded-[inherit]"
-        aria-label={`Claim ${provider.name} signup bonus`}
+        aria-label={t("card.claim.aria", { name: provider.name })}
       />
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
@@ -47,7 +50,7 @@ export default function ProviderCard({ provider }) {
           {provider.rating.toFixed(1)}
         </span>
         <span className="z-10 inline-flex items-center gap-1 font-mono text-xs text-muted transition group-hover:text-signal-deep">
-          Claim bonus
+          {t("card.claim")}
           <ArrowUpRight
             size={15}
             className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

@@ -4,9 +4,12 @@ import "@fontsource-variable/sora";
 import "@fontsource/ibm-plex-mono";
 import "./index.css";
 import App from "./App.jsx";
+import { I18nProvider } from "./i18n";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <I18nProvider>
+      <App />
+    </I18nProvider>
   </StrictMode>,
 );

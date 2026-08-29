@@ -39,6 +39,23 @@ export const REFERRAL_CODES = {
 };
 
 /**
+ * RATING SCALE (0-5, one decimal)
+ *
+ * `rating` is a composite of three things, in this order of weight:
+ *
+ *   1. Verification  - is the credit amount confirmed by a source that is not
+ *                      the provider itself (or an affiliate earning from it)?
+ *                      Unverifiable or self-contradicting offers lose the most.
+ *   2. Usability     - model breadth, login friction, protocol restrictions.
+ *   3. Durability    - is this likely to still exist in six months? Large-credit
+ *                      referral farms on throwaway domains score low here.
+ *
+ * It is NOT a measure of how big the signup bonus is. A $2000 claim from a
+ * forum giveaway thread rates BELOW a verified $70 from a company with docs.
+ *
+ * Keep ratings evidence-backed. When a rating is changed, leave the source in
+ * the inline comment so the next person can re-check it.
+ *
  * Base signup URL per provider, WITHOUT query string, plus the query param name
  * that service expects. The code itself comes from REFERRAL_CODES via the
  * provider `name`. Keeping param shape (aff= / ref= / invite_code=) here lets
@@ -49,57 +66,74 @@ export const REFERRAL_CODES = {
 /** @type {ProviderDef[]} */
 export const PROVIDERS = [
   {
+    // Independent review (IADecider, 2026-08-18) rates this 3.9: 160+ models,
+    // runs on the open-source New API gateway. GitHub signup credit scales with
+    // account age ($100 fresh, reported up to $500 for older accounts). The
+    // previous 2.1 reflected only model uptime, which is one factor of three.
     name: "Bluesminds",
     category: "API routers",
     description:
-      "100$ for Registering, Models don't works most of the time.",
-    tags: ["100$"],
-    rating: 2.1,
+      "$100 welcome credit on GitHub signup, scaling with account age. Routes 160+ models over one OpenAI-compatible endpoint. Some models are intermittently unavailable.",
+    tags: ["$100 base credit", "160+ models", "GitHub signup"],
+    rating: 3.5,
     featured: true,
     baseUrl: "https://api.bluesminds.com/register",
     codeParam: "aff",
   },
   {
+    // No independent source found during the 2026-08-29 research pass. Rating
+    // kept as-is rather than guessed. Re-verify before adjusting.
     name: "Xiaomi Mimo",
     category: "Official Router",
     description:
-      "Get 3$ credit on register. Official site, mimo. Refer and earn 3$ per person, up to 30 people, real models.",
-    tags: ["Refer and earn 3$", "upto 30 people", "Real Models"],
+      "Get $3 credit on register. Refer and earn $3 per person, up to 30 people. Backed by an official vendor domain rather than a reseller.",
+    tags: ["Refer and earn $3", "up to 30 people", "unverified"],
     rating: 4,
     featured: true,
     baseUrl: "https://platform.xiaomimimo.com",
     codeParam: "ref",
   },
   {
+    // Relay, not a general gateway: it rejects requests that do not look like
+    // they came from a coding agent ("401 unauthorized client detected"), so
+    // the credits cannot be used in ordinary chat clients. That restriction is
+    // the main caveat and is reflected in the rating despite the large credit.
     name: "Agent Router",
     category: "API routers",
     description:
-      "Sign up to receive $200 and invite others to receive $100. Opus-5, Sol-5.6.",
-    tags: ["GitHub login only", "best free models", "dail check in"],
-    rating: 4.8,
+      "$100-$200 credit on GitHub signup depending on the referral link. Coding agents only: requests must come from Claude Code, Codex, Cline and similar, not a chat client.",
+    tags: ["GitHub login only", "coding agents only", "$100-$200"],
+    rating: 4.3,
     featured: true,
     baseUrl: "https://agentrouter.org/register",
     codeParam: "aff",
   },
   {
+    // No independent source found during the 2026-08-29 research pass, and the
+    // model name in the original description could not be matched to any known
+    // model. Rating kept as-is rather than guessed. Re-verify before adjusting.
     name: "See Kai",
     category: "API routers",
     description:
-      "Sign up to receive $200. Fable, Sol-5.6.",
-    tags: ["Only chat models kind of useless", "200$", "Latest Models"],
+      "Reported $200 credit on signup, aimed at chat models. Amount and model list could not be confirmed against a non-affiliate source.",
+    tags: ["chat models", "unverified"],
     rating: 2.2,
-    featured: true,
+    featured: false,
     baseUrl: "https://seekai.cc/sign-up",
     codeParam: "aff",
   },
   {
+    // Credit amount is disputed: external giveaway threads claim $4000, while
+    // an independent listing says 4K credits (a different unit, not dollars).
+    // The only figure we can defend is "thousands of credits, Chinese models".
+    // Rating reflects the unverifiable amount, not the size of the claim.
     name: "Hcnsec",
     category: "API routers",
     description:
-      "Register and get $2000. Only Chinese models.",
-    tags: ["Chinese Models only", "200$"],
-    rating: 4,
-    featured: true,
+      "Large credit grant on register, reportedly thousands of credits. Only Chinese models. Amount could not be verified against a non-affiliate source.",
+    tags: ["Chinese Models only", "amount unverified"],
+    rating: 2.6,
+    featured: false,
     baseUrl: "https://api.hcnsec.cn/register",
     codeParam: "aff",
   },

@@ -5,6 +5,8 @@ import ProviderCard from "./components/ProviderCard";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import { activeProviders } from "./data/providers";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import { useI18n } from "./i18n";
 
 function sortProviders(list, sort) {
   const sorted = [...list];
@@ -26,6 +28,7 @@ function sortProviders(list, sort) {
 }
 
 export default function App() {
+  const { t } = useI18n();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("featured");
@@ -57,30 +60,38 @@ export default function App() {
           boxShadow: "var(--shadow-header)",
         }}
       >
-        <div className="site-shell flex min-h-[64px] items-center justify-between">
-          <a href="#top" className="inline-flex items-center gap-2.5" aria-label="Router Watch home">
+        <div className="site-shell flex min-h-[64px] items-center justify-between gap-3">
+          <a
+            href="#top"
+            className="inline-flex min-w-0 items-center gap-2.5"
+            aria-label={t("brand.home")}
+          >
             <span
               className="grid size-9 place-items-center rounded-md font-mono text-sm font-semibold"
               style={{ backgroundColor: "var(--mark-bg)", color: "var(--mark-text)" }}
             >
               RW
             </span>
-            <span className="leading-tight">
+            <span className="min-w-0 leading-tight">
               <strong className="block text-sm font-semibold text-ink">
                 Router Watch
               </strong>
-              <small className="block font-mono text-[10px] uppercase tracking-wider text-muted">
-                Free credit, tracked
+              <small className="hidden truncate font-mono text-[10px] uppercase tracking-wider text-muted sm:block">
+                {t("brand.tagline")}
               </small>
             </span>
           </a>
-          <nav aria-label="Primary">
+          <nav
+            aria-label={t("nav.primary")}
+            className="flex shrink-0 items-center gap-2 sm:gap-3"
+          >
             <a
               href="#catalog"
-              className="rounded-md px-3 py-2 text-sm text-ink-soft transition hover:bg-paper-2 hover:text-ink"
+              className="rounded-md px-2 py-2 text-sm text-ink-soft transition hover:bg-paper-2 hover:text-ink sm:px-3"
             >
-              Catalog
+              {t("nav.catalog")}
             </a>
+            <LanguageSwitcher />
           </nav>
         </div>
       </header>
@@ -99,12 +110,9 @@ export default function App() {
                 id="catalog-title"
                 className="text-2xl font-semibold tracking-tight text-ink md:text-3xl"
               >
-                Gateway list
+                {t("catalog.title")}
               </h2>
-              <p className="mt-3 text-muted">
-                Every gateway, its signup bonus, and the models behind it.
-                Narrow the list before you commit to a signup.
-              </p>
+              <p className="mt-3 text-muted">{t("catalog.body")}</p>
             </div>
 
             <ControlDeck
@@ -128,7 +136,7 @@ export default function App() {
           ) : (
             <div className="rounded-[var(--radius-card)] border border-dashed border-line-strong bg-paper-2/40 p-12 text-center">
               <p className="text-base font-semibold text-ink">
-                Nothing matches those filters.
+                {t("empty.title")}
               </p>
               <button
                 type="button"
@@ -138,7 +146,7 @@ export default function App() {
                 }}
                 className="mt-4 inline-flex rounded-[var(--radius-control)] border border-line bg-surface px-4 py-2 text-sm text-ink-soft transition hover:border-signal hover:text-signal-deep"
               >
-                Clear filters
+                {t("empty.action")}
               </button>
             </div>
           )}
