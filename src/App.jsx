@@ -28,7 +28,7 @@ function sortProviders(list, sort) {
 }
 
 export default function App() {
-  const { t } = useI18n();
+  const { t, providerCopy, categoryLabel } = useI18n();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("featured");
@@ -37,19 +37,26 @@ export default function App() {
     const q = query.trim().toLowerCase();
     let list = activeProviders;
     if (q) {
-      list = list.filter(
-        (p) =>
+      list = list.filter((p) => {
+        // Match against the language currently displayed, plus the English
+        // source and the gateway name, so searching works in any language.
+        const { description, tags } = providerCopy(p);
+        return (
           p.name.toLowerCase().includes(q) ||
           p.description.toLowerCase().includes(q) ||
-          p.tags.some((t) => t.toLowerCase().includes(q)) ||
-          p.category.toLowerCase().includes(q),
-      );
+          p.tags.some((tag) => tag.toLowerCase().includes(q)) ||
+          p.category.toLowerCase().includes(q) ||
+          description.toLowerCase().includes(q) ||
+          tags.some((tag) => tag.toLowerCase().includes(q)) ||
+          categoryLabel(p.category).toLowerCase().includes(q)
+        );
+      });
     }
     if (category !== "all") {
       list = list.filter((p) => p.category === category);
     }
     return sortProviders(list, sort);
-  }, [query, category, sort]);
+  }, [query, category, sort, providerCopy, categoryLabel]);
 
   return (
     <div className="min-h-[100dvh] font-display">

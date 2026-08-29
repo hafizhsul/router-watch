@@ -12,6 +12,7 @@ import {
   LANGUAGES,
   LOCALES,
 } from "./locales";
+import { CATEGORY_LABELS, PROVIDER_COPY } from "./providerCopy";
 
 const STORAGE_KEY = "router-watch.lang";
 
@@ -109,14 +110,44 @@ export function I18nProvider({ children }) {
     desc.setAttribute("content", text);
   }, [language, t]);
 
+  /**
+   * Translated description + tags for one provider, falling back to the
+   * English source of truth in data/providers.js.
+   * @param {{ name: string, description: string, tags: string[] }} provider
+   * @returns {{ description: string, tags: string[] }}
+   */
+  const providerCopy = useCallback(
+    (provider) => {
+      const copy = PROVIDER_COPY[language]?.[provider.name];
+      return {
+        description: copy?.description ?? provider.description,
+        tags: copy?.tags ?? provider.tags,
+      };
+    },
+    [language],
+  );
+
+  /**
+   * Display label for a category. Filtering still compares canonical values,
+   * so this only affects what the user reads.
+   * @param {string} category
+   * @returns {string}
+   */
+  const categoryLabel = useCallback(
+    (category) => CATEGORY_LABELS[language]?.[category] ?? category,
+    [language],
+  );
+
   const value = useMemo(
     () => ({
       language,
       setLanguage,
       t,
       isCjk: CJK_LANGUAGES.includes(language),
+      providerCopy,
+      categoryLabel,
     }),
-    [language, setLanguage, t],
+    [language, setLanguage, t, providerCopy, categoryLabel],
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

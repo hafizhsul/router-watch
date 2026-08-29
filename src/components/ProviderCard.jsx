@@ -4,13 +4,14 @@ import { useI18n } from "../i18n";
 
 /**
  * A single gateway card. Presentational - receives the provider object.
- * Name, description, tags and category stay in their source language because
- * they are facts about the service, not UI copy.
+ * Description, tags and category label are shown translated; the gateway name
+ * and the rating stay as-is.
  */
 export default function ProviderCard({ provider }) {
-  const { t } = useI18n();
+  const { t, providerCopy, categoryLabel } = useI18n();
   const url = buildSignupUrl(provider);
-  const tagToShow = provider.tags[0];
+  const { description, tags } = providerCopy(provider);
+  const tagToShow = tags[0];
 
   return (
     <article
@@ -27,7 +28,7 @@ export default function ProviderCard({ provider }) {
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
           <p className="m-0 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            {provider.category}
+            {categoryLabel(provider.category)}
           </p>
           <h3 className="mt-1 text-lg font-semibold tracking-tight text-ink">
             {provider.name}
@@ -41,7 +42,7 @@ export default function ProviderCard({ provider }) {
       </div>
 
       <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">
-        {provider.description}
+        {description}
       </p>
 
       <div className="mt-5 flex items-center justify-between border-t border-line pt-4">

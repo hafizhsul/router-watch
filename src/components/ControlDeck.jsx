@@ -18,7 +18,7 @@ export default function ControlDeck({
   sort,
   onSort,
 }) {
-  const { t } = useI18n();
+  const { t, categoryLabel } = useI18n();
 
   return (
     <div className="mb-8 grid grid-cols-1 gap-4 rounded-[var(--radius-card)] border border-line bg-paper-2/60 p-4 md:grid-cols-[1fr_auto_auto] md:gap-6 md:p-5">
@@ -56,7 +56,7 @@ export default function ControlDeck({
           <option value="all">{t("filter.type.all")}</option>
           {categories().map((c) => (
             <option key={c} value={c}>
-              {c}
+              {categoryLabel(c)}
             </option>
           ))}
         </select>

@@ -9,7 +9,7 @@ import { useI18n } from "../i18n";
  * synthesized oblique CJK glyphs read as a rendering bug, not emphasis.
  */
 export default function Hero() {
-  const { t, isCjk } = useI18n();
+  const { t, isCjk, categoryLabel } = useI18n();
   const count = activeProviders.length;
   const categoryCount = new Set(activeProviders.map((p) => p.category)).size;
   const topRated = [...activeProviders]
@@ -78,7 +78,7 @@ export default function Hero() {
                           {p.name}
                         </p>
                         <p className="truncate font-mono text-[11px] text-muted">
-                          {p.category}
+                          {categoryLabel(p.category)}
                         </p>
                       </div>
                     </div>
