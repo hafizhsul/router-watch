@@ -50,7 +50,10 @@ export default function ProviderCard({ provider }) {
           <Star size={15} weight="fill" className="text-signal" />
           {provider.rating.toFixed(1)}
         </span>
-        <span className="z-10 inline-flex items-center gap-1 font-mono text-xs text-muted transition group-hover:text-signal-deep">
+        {/* pointer-events-none: let clicks fall through to the overlay link
+            above, so the whole footer area is clickable. Colour still reacts
+            via group-hover on the card. */}
+        <span className="pointer-events-none inline-flex items-center gap-1 font-mono text-xs text-muted transition group-hover:text-signal-deep">
           {t("card.claim")}
           <ArrowUpRight
             size={15}

@@ -31,7 +31,7 @@ export default function App() {
   const { t, providerCopy, categoryLabel } = useI18n();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
-  const [sort, setSort] = useState("featured");
+  const [sort, setSort] = useState("rating");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -96,7 +96,7 @@ export default function App() {
               href="#catalog"
               className="rounded-md px-2 py-2 text-sm text-ink-soft transition hover:bg-paper-2 hover:text-ink sm:px-3"
             >
-              {t("nav.catalog")}
+              {t("nav.gateway")}
             </a>
             <LanguageSwitcher />
           </nav>

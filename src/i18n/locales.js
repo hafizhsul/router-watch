@@ -44,7 +44,7 @@ const en = {
   "meta.description":
     "Router Watch: every AI gateway with free signup credit, in one board. Compare bonuses, models, and restrictions before you sign up.",
 
-  "nav.catalog": "Catalog",
+  "nav.gateway": "Gateway",
   "nav.language": "Language",
   "nav.primary": "Primary",
   "brand.home": "Router Watch home",
@@ -98,7 +98,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch: semua gateway AI dengan kredit daftar gratis, dalam satu papan. Bandingkan bonus, model, dan batasannya sebelum kamu mendaftar.",
 
-    "nav.catalog": "Katalog",
+    "nav.gateway": "Gateway",
     "nav.language": "Bahasa",
     "nav.primary": "Utama",
     "brand.home": "Beranda Router Watch",
@@ -148,7 +148,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch: 登録クレジットがもらえるAIゲートウェイを1つのボードにまとめました。登録前にボーナス・モデル・制限事項を比較できます。",
 
-    "nav.catalog": "カタログ",
+    "nav.gateway": "ゲートウェイ",
     "nav.language": "言語",
     "nav.primary": "メイン",
     "brand.home": "Router Watch ホーム",
@@ -198,7 +198,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch：汇总所有提供注册免费额度的 AI 网关。注册前先比较额度、模型与限制条件。",
 
-    "nav.catalog": "目录",
+    "nav.gateway": "网关",
     "nav.language": "语言",
     "nav.primary": "主导航",
     "brand.home": "Router Watch 首页",
@@ -248,7 +248,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch: todos los gateways de IA con crédito gratis de registro, en un solo panel. Compara bonos, modelos y restricciones antes de registrarte.",
 
-    "nav.catalog": "Catálogo",
+    "nav.gateway": "Gateway",
     "nav.language": "Idioma",
     "nav.primary": "Principal",
     "brand.home": "Inicio de Router Watch",
@@ -298,7 +298,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch: todos os gateways de IA com crédito grátis de cadastro, em um só painel. Compare bônus, modelos e restrições antes de se inscrever.",
 
-    "nav.catalog": "Catálogo",
+    "nav.gateway": "Gateway",
     "nav.language": "Idioma",
     "nav.primary": "Principal",
     "brand.home": "Início do Router Watch",
@@ -348,7 +348,7 @@ export const LOCALES = {
     "meta.description":
       "Router Watch : toutes les passerelles IA offrant un crédit d'inscription gratuit, réunies sur un seul tableau. Comparez bonus, modèles et restrictions avant de vous inscrire.",
 
-    "nav.catalog": "Catalogue",
+    "nav.gateway": "Passerelles",
     "nav.language": "Langue",
     "nav.primary": "Principal",
     "brand.home": "Accueil Router Watch",
