@@ -6,10 +6,13 @@
  * ########################################################################
  * Drop your own referral codes into REFERRAL_CODES below. Nothing else needs
  * editing. Each key matches a provider by `name`; the provider's signup URL is
- * built with `yourCode` at render time (@see buildSignupUrl).
+ * built from `baseUrl` + `codeParam` + this code at render time.
  *
- * Original codes were the prior site owner's, so they are intentionally NOT
- * carried over. Fill these in: <YOUR_CODE>
+ * These are the owner's own codes. The previous site's codes were deliberately
+ * not carried over, since they would route referral earnings to someone else.
+ *
+ * Replace a code here when you get a new one. Keep it as "" to link to the
+ * plain signup page with no code attached.
  * ########################################################################
  */
 
@@ -18,24 +21,24 @@
  */
 /** @type {ReferralCodes} */
 export const REFERRAL_CODES = {
-  // Bluesminds: https://api.bluesminds.com/register?aff=<YOUR_CODE>
-  "Bluesminds": "",
-  // Xiaomi Mimo: https://platform.xiaomimimo.com?ref=<YOUR_CODE>
-  "Xiaomi Mimo": "",
-  // Agent Router: https://agentrouter.org/register?aff=<YOUR_CODE>
-  "Agent Router": "",
-  // See Kai: https://seekai.cc/sign-up?aff=<YOUR_CODE>
-  "See Kai": "",
-  // Hcnsec: https://api.hcnsec.cn/register?aff=<YOUR_CODE>
-  "Hcnsec": "",
-  // GoRouter: https://gorouter.app/sign-up?aff=<YOUR_CODE>
-  "GoRouter": "",
-  // Bai: https://chat.b.ai/chat?invite_code=<YOUR_CODE>
-  "Bai": "",
-  // TaBiAi: https://tabitoken.com/sign-up?aff=<YOUR_CODE>
-  "TaBiAi": "",
-  // JustDoWork: https://api.justwoker.icu/sign-up?aff=<YOUR_CODE>
-  "JustDoWork": "",
+  // https://api.bluesminds.com/sign-up?aff=68fe
+  "Bluesminds": "68fe",
+  // https://platform.xiaomimimo.com?ref=LDN2RK
+  "Xiaomi Mimo": "LDN2RK",
+  // https://agentrouter.org/register?aff=XxLa
+  "Agent Router": "XxLa",
+  // https://seekai.cc/sign-up?aff=b1Lh
+  "See Kai": "b1Lh",
+  // https://api.hcnsec.cn/sign-up?aff=NIgz
+  "Hcnsec": "NIgz",
+  // https://gorouter.app/sign-up?aff=FGH3
+  "GoRouter": "FGH3",
+  // https://chat.b.ai/chat?invite_code=KHCGPQ
+  "Bai": "KHCGPQ",
+  // https://tabitoken.com/sign-up?aff=AyCB
+  "TaBiAi": "AyCB",
+  // https://api.justwoker.icu/register?aff=Zgno
+  "JustDoWork": "Zgno",
 };
 
 /**
@@ -77,7 +80,7 @@ export const PROVIDERS = [
     tags: ["$100 base credit", "160+ models", "GitHub signup"],
     rating: 3.5,
     featured: true,
-    baseUrl: "https://api.bluesminds.com/register",
+    baseUrl: "https://api.bluesminds.com/sign-up",
     codeParam: "aff",
   },
   {
@@ -134,7 +137,7 @@ export const PROVIDERS = [
     tags: ["Chinese Models only", "amount unverified"],
     rating: 2.6,
     featured: false,
-    baseUrl: "https://api.hcnsec.cn/register",
+    baseUrl: "https://api.hcnsec.cn/sign-up",
     codeParam: "aff",
   },
   {
@@ -178,7 +181,7 @@ export const PROVIDERS = [
     tags: ["100$ on signup", "Github Signup only"],
     rating: 4.2,
     featured: true,
-    baseUrl: "https://api.justwoker.icu/sign-up",
+    baseUrl: "https://api.justwoker.icu/register",
     codeParam: "aff",
   },
 ];
@@ -196,10 +199,16 @@ export const PROVIDERS = [
  * @returns {string}
  */
 export function buildSignupUrl(p) {
-  const parsed = new URL(p.baseUrl);
   const code = REFERRAL_CODES[p.name] ?? "";
-  if (code) parsed.searchParams.set(p.codeParam, code);
-  return parsed.toString();
+  if (!code) return p.baseUrl;
+
+  // Splice the encoded query onto the original baseUrl string. Do not rebuild
+  // this with `new URL()`: it normalises the path and appends a trailing slash
+  // to bare domains, which turns "https://x.com" into "https://x.com/" and
+  // breaks providers whose signup page sits at the root.
+  const query = new URLSearchParams({ [p.codeParam]: code }).toString();
+  const joiner = p.baseUrl.includes("?") ? "&" : "?";
+  return `${p.baseUrl}${joiner}${query}`;
 }
 
 /** Active providers, code attached. Use this everywhere. */
