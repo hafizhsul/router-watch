@@ -1,0 +1,43 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-label="Router Watch"
+>
+  <title>Router Watch</title>
+  <style>
+    /* Brand-locked emerald tile, taken straight from the site's own tokens:
+       light signal-deep #0a6950, dark signal #2fbf95. No new invented hue.
+       #0f8f6f (light signal) was rejected here: only 3.72:1 against the glyph at
+       16px. #0a6950 gives 6.11:1 and is already the CTA background. */
+    .tile {
+      fill: #0a6950;
+    }
+    .glyph {
+      fill: #f6f5f1;
+    }
+    @media (prefers-color-scheme: dark) {
+      .tile {
+        fill: #2fbf95;
+      }
+      .glyph {
+        fill: #06231c;
+      }
+    }
+  </style>
+
+  <!-- Tile: 14/64 roundness, the same all-soft radius family as the card radius -->
+  <rect class="tile" width="64" height="64" rx="14" />
+
+  <!-- Route trace: one source node fanning out to two endpoints.
+       All filled shapes (no thin strokes) so it survives 16px. -->
+  <g class="glyph">
+    <rect x="18" y="29" width="21" height="6" rx="3" />
+    <rect x="33" y="17" width="6" height="30" rx="3" />
+    <rect x="36" y="14" width="14" height="6" rx="3" />
+    <rect x="36" y="44" width="14" height="6" rx="3" />
+    <circle cx="18" cy="32" r="6.5" />
+    <circle cx="47" cy="17" r="5" />
+    <circle cx="47" cy="47" r="5" />
+  </g>
+</svg>
