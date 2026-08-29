@@ -3,6 +3,23 @@ import { buildSignupUrl } from "../data/providers";
 import { useI18n } from "../i18n";
 
 /**
+ * Initial badge matching the original site's treatment: two uppercase letters
+ * from the gateway name, one shared accent colour. The original derived these
+ * with getInitials(), so there is no per-brand logo to reproduce.
+ * @param {string} name
+ * @returns {string}
+ */
+function getInitials(name) {
+  if (typeof name !== "string" || !name) return "??";
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((word) => word[0].toUpperCase())
+    .join("");
+}
+
+/**
  * A single gateway card. Presentational - receives the provider object.
  * Description, tags and category label are shown translated; the gateway name
  * and the rating stay as-is.
@@ -26,13 +43,23 @@ export default function ProviderCard({ provider }) {
         aria-label={t("card.claim.aria", { name: provider.name })}
       />
       <div className="mb-4 flex items-start justify-between gap-3">
-        <div>
-          <p className="m-0 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-            {categoryLabel(provider.category)}
-          </p>
-          <h3 className="mt-1 text-lg font-semibold tracking-tight text-ink">
-            {provider.name}
-          </h3>
+        <div className="flex min-w-0 items-start gap-3">
+          {/* Decorative: the card already carries the accessible name via the
+              overlay link, so the badge is hidden from assistive tech. */}
+          <span
+            aria-hidden="true"
+            className="grid size-11 shrink-0 place-items-center rounded-[10px] bg-signal-soft font-mono text-sm font-bold tracking-tight text-signal-deep ring-1 ring-inset ring-signal/30"
+          >
+            {getInitials(provider.name)}
+          </span>
+          <div className="min-w-0">
+            <p className="m-0 truncate font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+              {categoryLabel(provider.category)}
+            </p>
+            <h3 className="mt-0.5 truncate text-lg font-semibold tracking-tight text-ink">
+              {provider.name}
+            </h3>
+          </div>
         </div>
         {tagToShow && (
           <span className="shrink-0 rounded-full bg-signal-soft px-2.5 py-1 font-mono text-[10px] font-medium text-signal-deep">
