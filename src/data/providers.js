@@ -93,6 +93,7 @@ export const PROVIDERS = [
     description:
       "$100 welcome credit on GitHub signup, scaling with account age. Routes 160+ models over one OpenAI-compatible endpoint. Some models are intermittently unavailable.",
     tags: ["$100 base credit", "160+ models", "GitHub signup"],
+    models: ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna", "gpt-5.5", "glm-5.3", "deepseek-v4-pro", "kimi-k3", "gpt-4o"],
     modelType: "wide",
     login: "github",
     verification: "verified",
