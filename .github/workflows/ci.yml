@@ -1,0 +1,228 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# A push and its PR can run at the same time; keep only the newest.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Build and verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          test -f dist/index.html || { echo "::error::dist/index.html missing"; exit 1; }
+          test -d dist/assets || { echo "::error::dist/assets missing"; exit 1; }
+          # Every asset referenced by index.html must exist, or the deployed
+          # page would request files that were never emitted.
+          grep -oE '(src|href)="/assets/[^"]+"' dist/index.html \
+            | sed -E 's/.*="([^"]+)"/\1/' \
+            | while read -r asset; do
+                test -f "dist$asset" || { echo "::error::missing $asset"; exit 1; }
+                echo "ok $asset"
+              done
+          # /assets/ is cached as immutable for a year, so every file there
+          # must carry a content hash. Vite emits index-DBZWXerv.js for bundles
+          # and sora-latin-wght-normal-CawQDOvP.woff2 for fonts; both are
+          # fingerprinted, just with different suffixes.
+          find dist/assets -type f -printf '%f\n' | while read -r file; do
+            case "$file" in
+              *.js) pattern='-????????.js' ;;
+              *.css) pattern='-????????.css' ;;
+              *) pattern='-????????.' ;;
+            esac
+            case "$file" in
+              *$pattern*) echo "ok $file" ;;
+              *) echo "::error::unfingerprinted asset $file"; exit 1 ;;
+            esac
+          done
+
+      - name: Verify referral links and data integrity
+        run: |
+          node --input-type=module -e '
+          import { PROVIDERS, REFERRAL_CODES, buildSignupUrl, categories } from "./src/data/providers.js";
+
+          let failed = 0;
+          const fail = (m) => { console.log(`::error::${m}`); failed++; };
+
+          // Every gateway needs a code, otherwise the site silently links to a
+          // plain signup page and no referral is credited.
+          for (const p of PROVIDERS) {
+            if (!REFERRAL_CODES[p.name]) fail(`${p.name}: referral code is empty`);
+          }
+
+          // Codes are keyed by gateway name, so a stray key is a dead entry.
+          for (const key of Object.keys(REFERRAL_CODES)) {
+            if (!PROVIDERS.some((p) => p.name === key)) {
+              fail(`REFERRAL_CODES has unknown key "${key}"`);
+            }
+          }
+
+          // The generated URL must actually carry the code, in the parameter
+          // that service expects.
+          for (const p of PROVIDERS) {
+            const url = buildSignupUrl(p);
+            let parsed;
+            try { parsed = new URL(url); }
+            catch { fail(`${p.name}: invalid URL ${url}`); continue; }
+            const code = REFERRAL_CODES[p.name];
+            if (parsed.searchParams.get(p.codeParam) !== code) {
+              fail(`${p.name}: ${p.codeParam} not set to ${code} in ${url}`);
+            }
+            if (!["https:", "http:"].includes(parsed.protocol)) {
+              fail(`${p.name}: unexpected protocol ${parsed.protocol}`);
+            }
+          }
+
+          // Ratings are rendered with toFixed(1), so guard the range.
+          for (const p of PROVIDERS) {
+            if (typeof p.rating !== "number" || p.rating < 0 || p.rating > 5) {
+              fail(`${p.name}: rating ${p.rating} outside 0-5`);
+            }
+          }
+
+          if (categories().length === 0) fail("no categories resolved");
+
+          console.log(`checked ${PROVIDERS.length} gateways, ${categories().length} categories`);
+          if (failed) { console.log(`${failed} check(s) failed`); process.exit(1); }
+          console.log("data integrity OK");
+          '
+
+      - name: Verify translations are complete
+        run: |
+          node --input-type=module -e '
+          import { LOCALES, LANGUAGE_LIST } from "./src/i18n/locales.js";
+          import { PROVIDER_COPY, CATEGORY_LABELS } from "./src/i18n/providerCopy.js";
+          import { PROVIDERS } from "./src/data/providers.js";
+
+          let failed = 0;
+          const fail = (m) => { console.log(`::error::${m}`); failed++; };
+          const uiKeys = Object.keys(LOCALES.en);
+          const names = PROVIDERS.map((p) => p.name);
+          const cats = [...new Set(PROVIDERS.map((p) => p.category))];
+
+          for (const { code } of LANGUAGE_LIST) {
+            const locale = LOCALES[code];
+            if (!locale) { fail(`locale ${code} missing`); continue; }
+            if (code === "en") continue;
+
+            const missing = uiKeys.filter((k) => !(k in locale));
+            if (missing.length) fail(`${code}: missing UI keys ${missing.join(", ")}`);
+
+            const copy = PROVIDER_COPY[code] || {};
+            for (const n of names) {
+              if (!copy[n]) fail(`${code}: ${n} has no translated description`);
+            }
+
+            const labels = CATEGORY_LABELS[code] || {};
+            for (const c of cats) {
+              if (!labels[c]) fail(`${code}: category "${c}" untranslated`);
+            }
+          }
+
+          if (failed) { console.log(`${failed} check(s) failed`); process.exit(1); }
+          console.log(`${LANGUAGE_LIST.length} locales complete, ${uiKeys.length} keys each`);
+          '
+
+      - name: Verify untranslatable values survived
+        run: |
+          node --input-type=module -e '
+          import { PROVIDERS } from "./src/data/providers.js";
+          import { PROVIDER_COPY } from "./src/i18n/providerCopy.js";
+
+          // Brand and model names are matched literally. Credit amounts are
+          // matched as bare numbers rather than "$100", because French writes
+          // the symbol after the value ("100 $"). Comparing the literal string
+          // would fail every French card while the value was in fact correct.
+          const brands = {
+            Bluesminds: ["GitHub", "OpenAI"],
+            "Xiaomi Mimo": [],
+            "Agent Router": ["GitHub", "Claude Code", "Codex", "Cline"],
+            "See Kai": [],
+            Hcnsec: [],
+            GoRouter: ["Anthropic"],
+            Bai: ["glm-5.3", "Google"],
+            TaBiAi: ["Anthropic", "GitHub"],
+            JustDoWork: ["Anthropic"],
+          };
+          const amounts = {
+            Bluesminds: ["100", "160"],
+            "Xiaomi Mimo": ["3", "30"],
+            "Agent Router": ["100", "200"],
+            "See Kai": ["200"],
+            Hcnsec: [],
+            GoRouter: ["70", "2026"],
+            Bai: [],
+            TaBiAi: ["120"],
+            JustDoWork: ["100", "20"],
+          };
+
+          // Split on punctuation before collecting digit runs. Matching first
+          // and trimming afterwards merges adjacent sentences: "…$20. 100$…"
+          // yields the single run "20. 100" and the check misses both values.
+          const digitRuns = (s) =>
+            new Set(
+              s
+                .split(/[.,]/)
+                .flatMap((part) => part.match(/\d[\d\s]*/g) || [])
+                .map((m) => m.trim())
+                .filter(Boolean),
+            );
+
+          let failed = 0;
+          for (const [lang, table] of Object.entries(PROVIDER_COPY)) {
+            for (const [name, tokens] of Object.entries(brands)) {
+              const tr = table[name];
+              if (!tr) continue;
+              const haystack = `${tr.description} ${tr.tags.join(" ")}`;
+              for (const token of tokens) {
+                if (!haystack.includes(token)) {
+                  console.log(`::error::${lang}/${name}: brand "${token}" missing`);
+                  failed++;
+                }
+              }
+            }
+            for (const [name, values] of Object.entries(amounts)) {
+              const tr = table[name];
+              if (!tr) continue;
+              const present = digitRuns(`${tr.description} ${tr.tags.join(" ")}`);
+              for (const v of values) {
+                if (!present.has(v)) {
+                  console.log(`::error::${lang}/${name}: amount ${v} missing`);
+                  failed++;
+                }
+              }
+            }
+          }
+
+          if (failed) { console.log(`${failed} value(s) lost in translation`); process.exit(1); }
+          console.log("untranslatable values intact across all locales");
+          '
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
