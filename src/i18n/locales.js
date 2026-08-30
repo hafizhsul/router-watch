@@ -56,12 +56,12 @@ const en = {
   "hero.body":
     "A working list of model gateways, resale routers, and signup bonuses. Each entry shows what you actually get, what it costs after the bonus, and how to claim it.",
   "hero.cta": "Browse gateways",
-  "hero.count": "{n} gateways tracked",
+      "hero.count": "{n} gateways tracked",
+    "hero.live": "Live signals",
+    "hero.best.title": "Best offer on the board",
+    "hero.best.cta": "Claim it",
+    "hero.ticker": "On the board right now",
 
-  "ledger.title": "Best bonuses",
-  "ledger.note": "highest rated",
-  "ledger.footer":
-    "Community maintained. {n} gateways across {c} categories, checked for working signup links.",
 
   "catalog.title": "Gateway list",
   "catalog.body":
@@ -110,12 +110,12 @@ export const LOCALES = {
     "hero.body":
       "Daftar aktif gateway model, router resale, dan bonus pendaftaran. Setiap entri menunjukkan apa yang kamu terima, biayanya setelah bonus habis, dan cara mengklaimnya.",
     "hero.cta": "Lihat gateway",
-    "hero.count": "{n} gateway terpantau",
+        "hero.count": "{n} gateway terpantau",
+    "hero.live": "Sinyal langsung",
+    "hero.best.title": "Penawaran terbaik di papan",
+    "hero.best.cta": "Klaim sekarang",
+    "hero.ticker": "Sedang tampil di papan",
 
-    "ledger.title": "Bonus terbaik",
-    "ledger.note": "rating tertinggi",
-    "ledger.footer":
-      "Dikelola komunitas. {n} gateway dalam {c} kategori, diperiksa tautan daftarnya yang masih aktif.",
 
     "catalog.title": "Daftar gateway",
     "catalog.body":
@@ -160,12 +160,12 @@ export const LOCALES = {
     "hero.body":
       "モデルゲートウェイ、リセールルーター、登録ボーナスの実用的な一覧です。各項目で、実際に得られる内容、ボーナス終了後の費用、受け取り方法を確認できます。",
     "hero.cta": "ゲートウェイを見る",
-    "hero.count": "{n} 件のゲートウェイを掲載",
+        "hero.count": "{n} 件のゲートウェイを掲載",
+    "hero.live": "ライブシグナル",
+    "hero.best.title": "ボード最良のオファー",
+    "hero.best.cta": "今すぐ受け取る",
+    "hero.ticker": "ボードの掲載状況",
 
-    "ledger.title": "おすすめボーナス",
-    "ledger.note": "評価が高い順",
-    "ledger.footer":
-      "コミュニティ運営。{c} カテゴリにわたる {n} 件のゲートウェイを掲載し、登録リンクの動作を確認しています。",
 
     "catalog.title": "ゲートウェイ一覧",
     "catalog.body":
@@ -210,12 +210,12 @@ export const LOCALES = {
     "hero.body":
       "这是一份可用的清单，收录模型网关、转售路由与注册奖励。每条都说明你实际能拿到什么、额度用完后的成本，以及领取方式。",
     "hero.cta": "浏览网关",
-    "hero.count": "已收录 {n} 个网关",
+        "hero.count": "已收录 {n} 个网关",
+    "hero.live": "实时信号",
+    "hero.best.title": "看板最佳优惠",
+    "hero.best.cta": "立即领取",
+    "hero.ticker": "当前在看板",
 
-    "ledger.title": "最优奖励",
-    "ledger.note": "评分最高",
-    "ledger.footer":
-      "由社区维护。共 {n} 个网关，分属 {c} 个分类，注册链接已核验可用。",
 
     "catalog.title": "网关列表",
     "catalog.body":
@@ -260,12 +260,12 @@ export const LOCALES = {
     "hero.body":
       "Una lista funcional de gateways de modelos, routers de reventa y bonos de registro. Cada entrada muestra lo que recibes realmente, cuánto cuesta tras el bono y cómo reclamarlo.",
     "hero.cta": "Ver gateways",
-    "hero.count": "{n} gateways registrados",
+        "hero.count": "{n} gateways registrados",
+    "hero.live": "Señales en directo",
+    "hero.best.title": "Mejor oferta del panel",
+    "hero.best.cta": "Reclamarla",
+    "hero.ticker": "Ahora mismo en el panel",
 
-    "ledger.title": "Mejores bonos",
-    "ledger.note": "mejor valorados",
-    "ledger.footer":
-      "Mantenido por la comunidad. {n} gateways en {c} categorías, con enlaces de registro verificados.",
 
     "catalog.title": "Lista de gateways",
     "catalog.body":
@@ -310,12 +310,12 @@ export const LOCALES = {
     "hero.body":
       "Uma lista funcional de gateways de modelos, roteadores de revenda e bônus de cadastro. Cada item mostra o que você realmente recebe, quanto custa após o bônus e como resgatar.",
     "hero.cta": "Ver gateways",
-    "hero.count": "{n} gateways monitorados",
+        "hero.count": "{n} gateways monitorados",
+    "hero.live": "Sinais ao vivo",
+    "hero.best.title": "Melhor oferta do painel",
+    "hero.best.cta": "Resgatar",
+    "hero.ticker": "Agora no painel",
 
-    "ledger.title": "Melhores bônus",
-    "ledger.note": "mais bem avaliados",
-    "ledger.footer":
-      "Mantido pela comunidade. {n} gateways em {c} categorias, com links de cadastro verificados.",
 
     "catalog.title": "Lista de gateways",
     "catalog.body":
@@ -360,12 +360,12 @@ export const LOCALES = {
     "hero.body":
       "Une liste à jour de passerelles de modèles, routeurs de revente et primes d'inscription. Chaque entrée indique ce que vous recevez réellement, le coût après la prime et comment la réclamer.",
     "hero.cta": "Voir les passerelles",
-    "hero.count": "{n} passerelles suivies",
+        "hero.count": "{n} passerelles suivies",
+    "hero.live": "Signaux en direct",
+    "hero.best.title": "Meilleure offre du tableau",
+    "hero.best.cta": "La réclamer",
+    "hero.ticker": "Actuellement sur le tableau",
 
-    "ledger.title": "Meilleures primes",
-    "ledger.note": "les mieux notées",
-    "ledger.footer":
-      "Maintenu par la communauté. {n} passerelles réparties en {c} catégories, liens d'inscription vérifiés.",
 
     "catalog.title": "Liste des passerelles",
     "catalog.body":
