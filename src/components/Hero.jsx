@@ -1,18 +1,19 @@
 import { ArrowRight, Compass, ArrowUpRight } from "@phosphor-icons/react";
+import { useEffect, useRef, useState } from "react";
 import { activeProviders, buildSignupUrl } from "../data/providers";
 import Reveal from "./Reveal";
 import { useI18n } from "../i18n";
 
 /**
- * Hero: left editorial manifesto (B), right a living board (A/C/D).
+ * Hero: left editorial manifesto (B), right a living board (A/C).
  *
- * Right panel shows a network-map backdrop (D), the offer with the highest
- * rating as a highlighted deal (C), and a "best offer" readout. Counts come
- * from the live provider data, so the panel is never stale.
+ * The right panel auto-rotates through the top-rated gateways with a crossfade
+ * and progress dots, so the highlighted offer is always moving. It pauses on
+ * hover/focus and never auto-rotates under prefers-reduced-motion. Counts come
+ * from live provider data. Only transform/opacity animate; no scroll listener.
  *
  * For CJK the italic accent is dropped because synthesized oblique CJK glyphs
- * read as a rendering bug, not emphasis. Only transform/opacity animate; the
- * panel carries no scroll listener, and everything respects reduced motion.
+ * read as a rendering bug, not emphasis.
  */
 export default function Hero() {
   const { t, isCjk, categoryLabel } = useI18n();
@@ -21,11 +22,35 @@ export default function Hero() {
   const topRated = [...activeProviders]
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 3);
-  const best = topRated[0];
+
+  const [offerIndex, setOfferIndex] = useState(0);
+  // Rotating stops while this timestamp is in the future. Set on any direct
+  // interaction (dot click, hover, focus) so the reader's choice wins for a
+  // short window before rotation resumes.
+  const pausedUntil = useRef(0);
 
   const accentClass = isCjk
     ? "font-semibold text-signal"
     : "font-medium italic text-signal";
+
+  const pauseRotation = () => {
+    pausedUntil.current = Date.now() + 10000;
+  };
+
+  // Auto-rotate the highlighted offer. Reduced motion or a single offer means
+  // no rotation at all; any interaction pauses it for a short window.
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || topRated.length <= 1) return;
+    const id = setInterval(() => {
+      if (Date.now() >= pausedUntil.current) {
+        setOfferIndex((i) => (i + 1) % topRated.length);
+      }
+    }, 4000);
+    return () => clearInterval(id);
+  }, [topRated.length]);
+
+  const offer = topRated[offerIndex];
 
   return (
     <section className="relative overflow-hidden">
@@ -58,52 +83,14 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          {/* Living board (A + C + D) */}
+          {/* Living board (A + C) */}
           <Reveal delay={120}>
             <div
               className="relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface-3 p-6 md:p-7"
               style={{ boxShadow: "var(--shadow-card)" }}
+              onMouseEnter={pauseRotation}
+              onMouseLeave={pauseRotation}
             >
-              {/* Network map backdrop (D). Sits in the top strip only, faint,
-                  and fades out before the content so it never reads as an
-                  overlap. The card below is opaque and z-10, so nothing can
-                  show through it either way. */}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 400 190"
-                preserveAspectRatio="xMidYMax slice"
-                className="pointer-events-none absolute left-0 right-0 top-0 h-44 w-full"
-                style={{
-                  maskImage:
-                    "linear-gradient(to bottom, black 45%, transparent 100%)",
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, black 45%, transparent 100%)",
-                }}
-              >
-                <g stroke="var(--line-strong)" strokeWidth="1" fill="none">
-                  <path d="M40 50 C80 30 120 50 150 78" />
-                  <path d="M150 78 C180 50 220 40 260 60" />
-                  <path d="M40 50 C60 100 120 110 150 78" />
-                  <path d="M260 60 C300 80 300 120 340 110" />
-                </g>
-                <g fill="var(--signal)">
-                  <circle cx="40" cy="50" r="3" />
-                  <circle cx="150" cy="78" r="4" />
-                  <circle cx="260" cy="60" r="3" />
-                  <circle cx="340" cy="110" r="2.5" />
-                </g>
-                <circle
-                  cx="150"
-                  cy="78"
-                  r="7"
-                  fill="none"
-                  stroke="var(--signal)"
-                  strokeOpacity="0.35"
-                  className="animate-ping"
-                  style={{ transformOrigin: "150px 78px" }}
-                />
-              </svg>
-
               <div className="relative z-10 flex flex-col">
                 <div className="mb-5 flex items-center justify-between border-b border-line pb-4">
                   <span className="inline-flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.18em] text-muted">
@@ -118,35 +105,70 @@ export default function Hero() {
                   </span>
                 </div>
 
-                {/* Best offer (C). Solid surface so content reads cleanly; the
-                    faint signal tint marks it as the highlighted offer. */}
-                <div className="rounded-[12px] border border-signal/30 bg-surface p-4">
-                  <p className="m-0 font-mono text-micro uppercase tracking-[0.18em] text-signal-deep">
-                    {t("hero.best.title")}
-                  </p>
-                  <div className="mt-2 flex items-center justify-between gap-3">
-                    <div className="min-w-0">
-                      <p className="truncate text-base font-semibold text-ink">
-                        {best.name}
-                      </p>
-                      <p className="truncate font-mono text-2xs text-muted">
-                        {categoryLabel(best.category)} ·{" "}
-                        {best.tags[0] ?? ""}
-                      </p>
+                {/* Rotating best offer (C). Crossfades on a key remount; the
+                    dot indicator never lies about which offer is showing.
+                    Interaction pauses rotation briefly, and reduced-motion
+                    disables it entirely in the effect above. */}
+                <div
+                  className="rounded-[12px] border border-signal/30 bg-surface p-4"
+                  onFocus={pauseRotation}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="m-0 font-mono text-micro uppercase tracking-[0.18em] text-signal-deep">
+                      {t("hero.best.title")}
+                    </p>
+                    <div className="flex gap-1.5">
+                      {topRated.map((p, i) => (
+                        <button
+                          key={p.name}
+                          type="button"
+                          aria-label={`${p.name} ${p.rating.toFixed(1)}`}
+                          aria-current={i === offerIndex ? "true" : undefined}
+                          onClick={() => {
+                            setOfferIndex(i);
+                            pauseRotation();
+                          }}
+                          className="grid size-6 place-items-center"
+                        >
+                          {/* 24px hit area (WCAG 2.2 target), visual bar in the
+                              middle so the control reads as a dot indicator. */}
+                          <span
+                            className={`block h-1.5 rounded-full transition-all duration-300 ${
+                              i === offerIndex
+                                ? "w-4 bg-signal"
+                                : "w-1.5 bg-line hover:bg-signal/50"
+                            }`}
+                          />
+                        </button>
+                      ))}
                     </div>
-                    <span className="shrink-0 font-mono text-lg font-bold text-signal">
-                      {best.rating.toFixed(1)}
-                    </span>
                   </div>
-                  <a
-                    href={buildSignupUrl(best)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 font-mono text-xs font-semibold text-signal-deep transition hover:gap-1.5"
-                  >
-                    {t("hero.best.cta")}
-                    <ArrowUpRight size={15} weight="bold" />
-                  </a>
+
+                  <div key={offer.name} className="offer-crossfade mt-2">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="truncate text-base font-semibold text-ink">
+                          {offer.name}
+                        </p>
+                        <p className="truncate font-mono text-2xs text-muted">
+                          {categoryLabel(offer.category)} ·{" "}
+                          {offer.tags[0] ?? ""}
+                        </p>
+                      </div>
+                      <span className="shrink-0 font-mono text-lg font-bold text-signal">
+                        {offer.rating.toFixed(1)}
+                      </span>
+                    </div>
+                    <a
+                      href={buildSignupUrl(offer)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 font-mono text-xs font-semibold text-signal-deep transition hover:gap-1.5"
+                    >
+                      {t("hero.best.cta")}
+                      <ArrowUpRight size={15} weight="bold" />
+                    </a>
+                  </div>
                 </div>
 
                 {/* Leaderboard (A) */}
