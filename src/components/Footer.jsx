@@ -15,7 +15,9 @@ export default function Footer() {
           <p className="mt-1 max-w-md text-muted">{t("footer.about")}</p>
         </div>
         <a
-          href="#catalog"
+          href="https://github.com/hafizhsul/router-watch/issues/new"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex w-fit items-center gap-2 text-muted transition hover:text-ink"
         >
           <GitBranch size={18} />

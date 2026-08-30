@@ -83,7 +83,7 @@ export default function App() {
               <strong className="block text-sm font-semibold text-ink">
                 Router Watch
               </strong>
-              <small className="hidden truncate font-mono text-[10px] uppercase tracking-wider text-muted sm:block">
+              <small className="hidden truncate font-mono text-micro uppercase tracking-wider text-muted sm:block">
                 {t("brand.tagline")}
               </small>
             </span>

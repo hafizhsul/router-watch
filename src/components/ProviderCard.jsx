@@ -53,7 +53,7 @@ export default function ProviderCard({ provider }) {
             {getInitials(provider.name)}
           </span>
           <div className="min-w-0">
-            <p className="m-0 truncate font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+            <p className="m-0 truncate font-mono text-2xs uppercase tracking-[0.18em] text-muted">
               {categoryLabel(provider.category)}
             </p>
             <h3 className="mt-0.5 truncate text-lg font-semibold tracking-tight text-ink">
@@ -62,7 +62,7 @@ export default function ProviderCard({ provider }) {
           </div>
         </div>
         {tagToShow && (
-          <span className="shrink-0 rounded-full bg-signal-soft px-2.5 py-1 font-mono text-[10px] font-medium text-signal-deep">
+          <span className="shrink-0 rounded-full bg-signal-soft px-2.5 py-1 font-mono text-micro font-medium text-signal-deep">
             {tagToShow}
           </span>
         )}

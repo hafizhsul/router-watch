@@ -5,6 +5,15 @@
   --font-display: "Sora Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
+  /* ---- Micro type scale: labels, metadata, badges ----
+     Two roles, not arbitrary values. 2xs = a compact caption/metadata line;
+     micro = the smallest tag/badge/eyebrow. Both stay readable because they
+     are mono, uppercase and widely tracked. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 0.875rem;
+
   /* ---- Radius scale: ONE system, all-soft ---- */
   --radius-card: 16px;
   --radius-control: 10px;
@@ -155,7 +164,7 @@ a {
 }
 
 .cta-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   filter: brightness(1.08);
 }
 

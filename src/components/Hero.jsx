@@ -97,21 +97,21 @@ export default function Hero() {
 
               <div className="relative z-10 flex flex-col">
                 <div className="mb-5 flex items-center justify-between border-b border-line pb-4">
-                  <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                  <span className="inline-flex items-center gap-2 font-mono text-2xs uppercase tracking-[0.18em] text-muted">
                     <span className="relative flex size-2">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
                       <span className="relative inline-flex size-2 rounded-full bg-signal" />
                     </span>
                     {t("hero.live")}
                   </span>
-                  <span className="font-mono text-[11px] text-signal-deep">
+                  <span className="font-mono text-2xs text-signal-deep">
                     {count} · {categoryCount}
                   </span>
                 </div>
 
                 {/* Best offer (C) */}
                 <div className="rounded-[12px] border border-signal/30 bg-signal-soft/40 p-4">
-                  <p className="m-0 font-mono text-[10px] uppercase tracking-[0.18em] text-signal-deep">
+                  <p className="m-0 font-mono text-micro uppercase tracking-[0.18em] text-signal-deep">
                     {t("hero.best.title")}
                   </p>
                   <div className="mt-2 flex items-center justify-between gap-3">
@@ -119,7 +119,7 @@ export default function Hero() {
                       <p className="truncate text-base font-semibold text-ink">
                         {best.name}
                       </p>
-                      <p className="truncate font-mono text-[11px] text-muted">
+                      <p className="truncate font-mono text-2xs text-muted">
                         {categoryLabel(best.category)} ·{" "}
                         {best.tags[0] ?? ""}
                       </p>
@@ -140,7 +140,7 @@ export default function Hero() {
                 </div>
 
                 {/* Leaderboard (A) */}
-                <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                <p className="mt-5 font-mono text-2xs uppercase tracking-[0.18em] text-muted">
                   {t("hero.ticker")}
                 </p>
                 <ol className="mt-3 space-y-1.5">
