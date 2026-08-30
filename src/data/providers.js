@@ -180,6 +180,12 @@ export const PROVIDERS = [
     codeParam: "aff",
   },
   {
+    // Model availability is confirmed by third-party sources rather than only
+    // the homepage: a Juejin aggregator post (2026-07-29) and a Threads guide
+    // both list Claude Opus 5 and Opus 4.8 behind gorouter.app, and credit
+    // terms match ($50 new users, $6-10 daily check-in). Same "Unified API
+    // Gateway" template as TaBiAI, but with no negative community report, so
+    // verified rather than disputed.
     name: "GoRouter",
     category: "API routers",
     description:
@@ -187,7 +193,7 @@ export const PROVIDERS = [
     tags: ["Refer and get 40$", "70$ on sign up", "Github only"],
     modelType: "anthropic",
     login: "github",
-    verification: "none",
+    verification: "verified",
     creditUsd: 70,
     rating: 4.1,
     featured: true,
@@ -195,6 +201,12 @@ export const PROVIDERS = [
     codeParam: "aff",
   },
   {
+    // Independent reviews (IADecider 2026-08-05, TokenMix 2026-05-10) confirm a
+    // real multi-model catalog, not a relay: GPT-5.6, Claude Opus 4.8, Gemini,
+    // DeepSeek and Chinese labs, billed through one credit pool (1 USD = 1M
+    // credits), with card or crypto top-up. The reviews note it is crypto-first
+    // and has a $200 monthly subscription floor plus invite gating, which is
+    // why the rating is solid but not top despite the verified models.
     name: "Bai",
     category: "API routers",
     description:
@@ -202,9 +214,9 @@ export const PROVIDERS = [
     tags: ["Get 300k tokens with my link", "glm-5.3", "Google login", "Crypto"],
     modelType: "wide",
     login: "google",
-    verification: "none",
+    verification: "verified",
     creditUsd: null,
-    rating: 4.1,
+    rating: 4.2,
     featured: true,
     baseUrl: "https://chat.b.ai/chat",
     codeParam: "invite_code",
@@ -246,6 +258,11 @@ export const PROVIDERS = [
     codeParam: "aff",
   },
   {
+    // No independent source found. The dashboard is a locked New API install
+    // (sign-in, register, GitHub login, Discord announcement), so the model
+    // catalogue and the $100/$20 figures come only from the registration copy,
+    // not a third party. Kept conservative rather than trusted on its own
+    // claim, so unverified and rated low.
     name: "JustDoWork",
     category: "API routers",
     description:
@@ -253,9 +270,9 @@ export const PROVIDERS = [
     tags: ["100$ on signup", "Github Signup only"],
     modelType: "anthropic",
     login: "github",
-    verification: "none",
+    verification: "unverified",
     creditUsd: 100,
-    rating: 4.2,
+    rating: 3.4,
     featured: true,
     baseUrl: "https://api.justwoker.icu/register",
     codeParam: "aff",
