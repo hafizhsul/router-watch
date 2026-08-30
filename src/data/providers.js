@@ -78,7 +78,7 @@ export const REFERRAL_CODES = {
  *   a tag, or a conflicting source). "none" means no claim either way.
  * creditUsd: the stated signup credit in dollars, lower bound for ranges,
  *   null when it is not a dollar figure (tokens, credits, disputed).
- * @typedef {{ name: string, category: string, description: string, tags: string[], rating: number, featured: boolean, baseUrl: string, codeParam: string, modelType: string, login: string, verification: string, creditUsd: number | null }} ProviderDef
+ * @typedef {{ name: string, category: string, description: string, tags: string[], models: string[], rating: number, featured: boolean, baseUrl: string, codeParam: string, modelType: string, login: string, verification: string, creditUsd: number | null }} ProviderDef
  */
 
 /** @type {ProviderDef[]} */
@@ -93,7 +93,10 @@ export const PROVIDERS = [
     description:
       "$100 welcome credit on GitHub signup, scaling with account age. Routes 160+ models over one OpenAI-compatible endpoint. Some models are intermittently unavailable.",
     tags: ["$100 base credit", "160+ models", "GitHub signup"],
-    models: ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna", "gpt-5.5", "glm-5.3", "deepseek-v4-pro", "kimi-k3", "gpt-4o"],
+    // Live /v1/models for a working key, 2026-08-30: 27 models (token-level
+    // allowlist; the 160+ tag is the marketing breadth). kimi-k2.5 replaced
+    // the earlier kimi-k3, and glm-5.3 is not served to this token.
+    models: ["gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna", "gpt-5.5", "gpt-5.3-codex", "deepseek-v4-pro", "kimi-k2.5", "gpt-4o"],
     modelType: "wide",
     login: "github",
     verification: "verified",
@@ -159,6 +162,9 @@ export const PROVIDERS = [
     description:
       "Reported $200 credit on signup, aimed at chat models. Amount and model list could not be confirmed against a non-affiliate source.",
     tags: ["chat models", "unverified"],
+    // Live /v1/models for a working key, 2026-08-30: real frontier models
+    // behind the gateway, even though the $200 credit claim stays unverified.
+    models: ["gpt-5.6-sol", "claude-opus-5", "claude-fable-5", "claude-sonnet-5", "claude-opus-4-8", "gemini-3-6-flash", "grok-4-6", "deepseek-v4-pro", "glm-5-2"],
     modelType: "wide",
     login: "any",
     verification: "unverified",
@@ -178,6 +184,10 @@ export const PROVIDERS = [
     description:
       "Large credit grant on register, reportedly thousands of credits. Only Chinese models. Amount could not be verified against a non-affiliate source.",
     tags: ["Chinese Models only", "amount unverified"],
+    // Live /v1/models for a working key, 2026-08-30: 20 models, all Chinese
+    // vendors (DeepSeek, Zhipu GLM, Moonshot Kimi, MiniMax, Qwen, SenseNova,
+    // Step). Curated to chat models; auto/embedding/audio/image IDs omitted.
+    models: ["DeepSeek-V4-Pro", "DeepSeek-V4-Flash", "kimi-k3", "MiniMax-M3", "Qwen3.8-27B", "glm-4.5-air", "step-3.7-flash"],
     modelType: "chinese",
     login: "any",
     verification: "disputed",
@@ -259,6 +269,9 @@ export const PROVIDERS = [
     description:
       "New API-based gateway with referral access. Models, pricing and signup credit are only visible after login, so the catalogue and the amount could not be verified against an independent source.",
     tags: ["New API", "referral", "unverified"],
+    // Live /v1/models for a working key, 2026-08-30: the public catalogue was
+    // login-gated; behind a token it serves exactly four Claude Opus models.
+    models: ["claude-opus-5", "claude-opus-5-thinking", "claude-opus-4-8", "claude-opus-4-8-thinking"],
     modelType: "wide",
     login: "any",
     verification: "unverified",
@@ -279,6 +292,9 @@ export const PROVIDERS = [
     description:
       "Register and get $100. Only Anthropic models. $20 daily check-in.",
     tags: ["100$ on signup", "Github Signup only"],
+    // Live /v1/models for a working key, 2026-08-30: exactly four Claude Opus
+    // models, matching the "Only Anthropic models" signup claim.
+    models: ["claude-opus-5", "claude-opus-5-thinking", "claude-opus-4-8", "claude-opus-4-8-thinking"],
     modelType: "anthropic",
     login: "github",
     verification: "unverified",
