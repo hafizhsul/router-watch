@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="site-shell">
-        <div className="grid grid-cols-1 items-stretch gap-10 pb-14 pt-20 md:grid-cols-[1.05fr_0.95fr] md:gap-14 lg:pt-2 lg:pb-20">
+        <div className="grid grid-cols-1 items-stretch gap-10 pb-14 pt-20 md:grid-cols-[1.05fr_0.95fr] md:gap-14 md:pt-24 lg:pb-20">
           {/* Editorial side (B) */}
           <Reveal>
             <div className="flex h-full max-w-2xl flex-col justify-center">
