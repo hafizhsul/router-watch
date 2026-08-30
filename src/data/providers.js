@@ -39,6 +39,8 @@ export const REFERRAL_CODES = {
   "TaBiAi": "AyCB",
   // https://api.justwoker.icu/register?aff=Zgno
   "JustDoWork": "Zgno",
+  // https://kktoken.cc/sign-up?aff=bpXO
+  "KKToken": "bpXO",
 };
 
 /**
@@ -211,6 +213,21 @@ export const PROVIDERS = [
     rating: 4.3,
     featured: true,
     baseUrl: "https://tabitoken.com/sign-up",
+    codeParam: "aff",
+  },
+  {
+    name: "KKToken",
+    category: "API routers",
+    description:
+      "New API-based gateway with referral access. Models, pricing and signup credit are only visible after login, so the catalogue and the amount could not be verified against an independent source.",
+    tags: ["New API", "referral", "unverified"],
+    modelType: "wide",
+    login: "any",
+    verification: "unverified",
+    creditUsd: null,
+    rating: 2.5,
+    featured: false,
+    baseUrl: "https://kktoken.cc/sign-up",
     codeParam: "aff",
   },
   {

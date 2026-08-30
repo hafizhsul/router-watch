@@ -61,6 +61,11 @@ export const PROVIDER_COPY = {
         "Daftar dan dapat $120. Hanya model Anthropic. Pendaftaran hanya lewat GitHub.",
       tags: ["120$ saat daftar", "Daftar via GitHub"],
     },
+    KKToken: {
+      description:
+        "Gateway berbasis New API dengan akses referral. Model, harga, dan kredit pendaftaran hanya terlihat setelah login, jadi katalog dan besarannya tidak dapat diverifikasi dari sumber independen.",
+      tags: ["New API", "referral", "belum terverifikasi"],
+    },
     JustDoWork: {
       description:
         "Daftar dan dapat $100. Hanya model Anthropic. Check-in harian $20.",
@@ -109,6 +114,11 @@ export const PROVIDER_COPY = {
         "登録で$120を獲得。Anthropicモデルのみ対応。登録はGitHub限定です。",
       tags: ["登録で120$", "GitHub登録"],
     },
+    KKToken: {
+      description:
+        "New APIベースのゲートウェイ（紹介リンク付き）。モデル・価格・登録クレジットはログイン後にのみ表示されるため、カタログと金額は独立した情報源で確認できませんでした。",
+      tags: ["New API", "紹介", "未確認"],
+    },
     JustDoWork: {
       description:
         "登録で$100を獲得。Anthropicモデルのみ対応。毎日のチェックインで$20。",
@@ -156,6 +166,11 @@ export const PROVIDER_COPY = {
       description:
         "注册即获 $120。仅支持 Anthropic 模型。仅限 GitHub 注册。",
       tags: ["注册得 120$", "GitHub 注册"],
+    },
+    KKToken: {
+      description:
+        "基于 New API 的网关，带推荐链接。模型、价格和注册额度仅在登录后可见，因此无法从独立来源核实目录与金额。",
+      tags: ["New API", "推荐", "未核实"],
     },
     JustDoWork: {
       description:
@@ -210,6 +225,11 @@ export const PROVIDER_COPY = {
         "Regístrate y obtén $120. Solo modelos de Anthropic. El registro es únicamente con GitHub.",
       tags: ["120$ al registrarte", "registro con GitHub"],
     },
+    KKToken: {
+      description:
+        "Pasarela basada en New API con acceso por referencia. Los modelos, precios y el crédito de registro solo se ven tras iniciar sesión, así que el catálogo y el importe no pudieron verificarse en una fuente independiente.",
+      tags: ["New API", "referido", "sin verificar"],
+    },
     JustDoWork: {
       description:
         "Regístrate y obtén $100. Solo modelos de Anthropic. $20 por check-in diario.",
@@ -263,6 +283,11 @@ export const PROVIDER_COPY = {
         "Cadastre-se e ganhe $120. Somente modelos da Anthropic. O cadastro é exclusivamente via GitHub.",
       tags: ["120$ no cadastro", "cadastro via GitHub"],
     },
+    KKToken: {
+      description:
+        "Gateway baseado em New API com acesso por indicação. Modelos, preços e crédito de cadastro só aparecem após login, então o catálogo e o valor não puderam ser verificados em fonte independente.",
+      tags: ["New API", "indicação", "não verificado"],
+    },
     JustDoWork: {
       description:
         "Cadastre-se e ganhe $100. Somente modelos da Anthropic. $20 por check-in diário.",
@@ -315,6 +340,11 @@ export const PROVIDER_COPY = {
       description:
         "Inscrivez-vous et recevez 120 $. Modèles Anthropic uniquement. Inscription exclusivement via GitHub.",
       tags: ["120 $ à l'inscription", "inscription GitHub"],
+    },
+    KKToken: {
+      description:
+        "Passerelle basée sur New API avec accès parrainé. Models, tarifs et crédit d'inscription ne sont visibles qu'après connexion, donc le catalogue et le montant n'ont pas pu être vérifiés par une source indépendante.",
+      tags: ["New API", "parrainage", "non vérifié"],
     },
     JustDoWork: {
       description:
