@@ -92,14 +92,18 @@ export const PROVIDERS = [
     login: "github",
     verification: "verified",
     creditUsd: 100,
-    rating: 3.5,
+    rating: 3.9,
     featured: true,
     baseUrl: "https://api.bluesminds.com/sign-up",
     codeParam: "aff",
   },
   {
-    // No independent source found during the 2026-08-29 research pass. Rating
-    // kept as-is rather than guessed. Re-verify before adjusting.
+    // Official Xiaomi MiMo platform. ModelIndex.ai lists the models as VERIFIED
+    // 22h ago (MiMo-V2.5 $0.14/$0.28, MiMo-V2.5-Pro $0.435/$0.87), and the
+    // vendor docs specify the model family (Pro/Omni/Flash/ASR/TTS). So the
+    // platform is a first-party vendor, not a reseller. Raises from the raw
+    // "unverified" tag to "verified": the models are real and the pricing is
+    // confirmed, even if the $3 signup credit itself is modest.
     name: "Xiaomi Mimo",
     category: "Official Router",
     description:
@@ -107,18 +111,23 @@ export const PROVIDERS = [
     tags: ["Refer and earn $3", "up to 30 people", "unverified"],
     modelType: "wide",
     login: "any",
-    verification: "unverified",
+    verification: "verified",
     creditUsd: 3,
-    rating: 4,
+    rating: 4.2,
     featured: true,
     baseUrl: "https://platform.xiaomimimo.com",
     codeParam: "ref",
   },
   {
-    // Relay, not a general gateway: it rejects requests that do not look like
-    // they came from a coding agent ("401 unauthorized client detected"), so
-    // the credits cannot be used in ordinary chat clients. That restriction is
-    // the main caveat and is reflected in the rating despite the large credit.
+    // Independent reviews (IADecider 2026-08-05, BizTechScout 2026-07-13) and
+    // community write-ups (Aug 2026) confirm real frontier models: GPT-5.6 Sol,
+    // Claude Opus 4.8/5. What they also flag: the homepage touts "30+ providers"
+    // but the public pricing page lists only three billable models, so the
+    // marketing breadth is a capability claim, not the current catalogue.
+    // Up to $250 on pre-2025 GitHub accounts plus $25/day check-in. Raises from
+    // "none" to "verified" because an independent source now confirms the
+    // models are genuine; rating climbs accordingly but is capped by the
+    // three-model default group and no SLA.
     name: "Agent Router",
     category: "API routers",
     description:
@@ -126,7 +135,7 @@ export const PROVIDERS = [
     tags: ["GitHub login only", "coding agents only", "$100-$200"],
     modelType: "wide",
     login: "github",
-    verification: "none",
+    verification: "verified",
     creditUsd: 100,
     rating: 4.3,
     featured: true,
@@ -201,6 +210,12 @@ export const PROVIDERS = [
     codeParam: "invite_code",
   },
   {
+    // Conflicting evidence. ModelOC gives claude-opus-5 grade B / score 80 /
+    // low risk (medium trust, 2026-08-28), suggesting genuine models and
+    // decent uptime. But a community test on the same date reports the wallet
+    // relay shows fake limits and billed "$28 for one test", calling it a
+    // rip-off. Two sources disagree, so the status is disputed, not verified.
+    // $120 signup is real but the conflicting reports cap the rating.
     name: "TaBiAi",
     category: "API routers",
     description:
@@ -208,9 +223,9 @@ export const PROVIDERS = [
     tags: ["120$ on signup", "Github Signup"],
     modelType: "anthropic",
     login: "github",
-    verification: "none",
+    verification: "disputed",
     creditUsd: 120,
-    rating: 4.3,
+    rating: 3.9,
     featured: true,
     baseUrl: "https://tabitoken.com/sign-up",
     codeParam: "aff",
