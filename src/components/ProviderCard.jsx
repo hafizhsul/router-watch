@@ -19,16 +19,26 @@ function getInitials(name) {
     .join("");
 }
 
+const VERIFICATION_STYLE = {
+  verified: "bg-signal-soft text-signal-deep border-signal/30",
+  unverified: "bg-paper-2 text-muted border-line",
+  disputed: "bg-surface text-ink-soft border-signal/40",
+};
+
 /**
  * A single gateway card. Presentational - receives the provider object.
  * Description, tags and category label are shown translated; the gateway name
- * and the rating stay as-is.
+ * and the rating stay as-is. A verification badge appears only when the
+ * provider data carries an evidence-backed claim (verified / unverified /
+ * disputed); "none" means no claim either way, so nothing is shown.
  */
 export default function ProviderCard({ provider }) {
   const { t, providerCopy, categoryLabel } = useI18n();
   const url = buildSignupUrl(provider);
   const { description, tags } = providerCopy(provider);
-  const tagToShow = tags[0];
+  const hasVerdict = ["verified", "unverified", "disputed"].includes(
+    provider.verification,
+  );
 
   return (
     <article
@@ -61,9 +71,11 @@ export default function ProviderCard({ provider }) {
             </h3>
           </div>
         </div>
-        {tagToShow && (
-          <span className="shrink-0 rounded-full bg-signal-soft px-2.5 py-1 font-mono text-micro font-medium text-signal-deep">
-            {tagToShow}
+        {hasVerdict && (
+          <span
+            className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-micro font-medium ${VERIFICATION_STYLE[provider.verification]}`}
+          >
+            {t(`verification.${provider.verification}`)}
           </span>
         )}
       </div>
@@ -71,6 +83,17 @@ export default function ProviderCard({ provider }) {
       <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">
         {description}
       </p>
+
+      <div className="mt-4 flex flex-wrap items-center gap-1.5">
+        {tags.slice(0, 2).map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-line px-2 py-0.5 font-mono text-micro text-ink-soft"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
       <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
         <span className="inline-flex items-center gap-1.5 font-mono text-sm font-semibold text-ink">

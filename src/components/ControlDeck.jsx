@@ -1,27 +1,31 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
-import { categories } from "../data/providers";
+import { categories, modelTypes } from "../data/providers";
 import { useI18n } from "../i18n";
 
 const SORT_OPTIONS = ["featured", "rating", "name", "category"];
+const MODELS = ["anthropic", "chinese", "wide"];
 
 /**
- * Search + category filter + sort. Lift all state to the parent; this is a
- * controlled deck. Label-above-input, contrast-safe, no placeholder-as-label.
+ * Search + category + model filters + sort. Lift all state to the parent; this
+ * is a controlled deck. Label-above-input, contrast-safe, no placeholder-as-
+ * label.
  *
- * @param {{ query: string, onQuery: (q: string) => void, category: string, onCategory: (c: string) => void, sort: string, onSort: (s: string) => void }} props
+ * @param {{ query: string, onQuery: (q: string) => void, category: string, onCategory: (c: string) => void, model: string, onModel: (m: string) => void, sort: string, onSort: (s: string) => void }} props
  */
 export default function ControlDeck({
   query,
   onQuery,
   category,
   onCategory,
+  model,
+  onModel,
   sort,
   onSort,
 }) {
   const { t, categoryLabel } = useI18n();
 
   return (
-    <div className="mb-8 grid grid-cols-1 gap-4 rounded-[var(--radius-card)] border border-line bg-paper-2/60 p-4 md:grid-cols-[1fr_auto_auto] md:gap-6 md:p-5">
+    <div className="mb-8 grid grid-cols-1 gap-4 rounded-[var(--radius-card)] border border-line bg-paper-2/60 p-4 md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_auto_auto_auto] lg:p-5">
       <div className="relative">
         <label htmlFor="catalog-search" className="sr-only">
           {t("filter.search.label")}
@@ -57,6 +61,28 @@ export default function ControlDeck({
           {categories().map((c) => (
             <option key={c} value={c}>
               {categoryLabel(c)}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
+        <label
+          htmlFor="catalog-model"
+          className="text-xs font-medium text-muted"
+        >
+          {t("filter.model.label")}
+        </label>
+        <select
+          id="catalog-model"
+          value={model}
+          onChange={(e) => onModel(e.target.value)}
+          className="h-11 rounded-[var(--radius-control)] border border-line bg-surface px-3 text-sm text-ink outline-none focus:border-signal focus:ring-2 focus:ring-signal/30"
+        >
+          <option value="all">{t("filter.model.all")}</option>
+          {MODELS.map((m) => (
+            <option key={m} value={m}>
+              {t(`filter.model.${m}`)}
             </option>
           ))}
         </select>

@@ -63,7 +63,15 @@ export const REFERRAL_CODES = {
  * that service expects. The code itself comes from REFERRAL_CODES via the
  * provider `name`. Keeping param shape (aff= / ref= / invite_code=) here lets
  * each service keep its own convention.
- * @typedef {{ name: string, category: string, description: string, tags: string[], rating: number, featured: boolean, baseUrl: string, codeParam: string }} ProviderDef
+ * modelType: "anthropic" | "chinese" | "wide" - the model family the gateway
+ * actually serves, derived from its description/tags.
+ * login: "github" | "google" | "any" the signup auth path, from the tags.
+ * verification: "verified" | "unverified" | "disputed" | "none".
+ *   Only set when the inline comment carries evidence (an independent review,
+ *   a tag, or a conflicting source). "none" means no claim either way.
+ * creditUsd: the stated signup credit in dollars, lower bound for ranges,
+ *   null when it is not a dollar figure (tokens, credits, disputed).
+ * @typedef {{ name: string, category: string, description: string, tags: string[], rating: number, featured: boolean, baseUrl: string, codeParam: string, modelType: string, login: string, verification: string, creditUsd: number | null }} ProviderDef
  */
 
 /** @type {ProviderDef[]} */
@@ -78,6 +86,10 @@ export const PROVIDERS = [
     description:
       "$100 welcome credit on GitHub signup, scaling with account age. Routes 160+ models over one OpenAI-compatible endpoint. Some models are intermittently unavailable.",
     tags: ["$100 base credit", "160+ models", "GitHub signup"],
+    modelType: "wide",
+    login: "github",
+    verification: "verified",
+    creditUsd: 100,
     rating: 3.5,
     featured: true,
     baseUrl: "https://api.bluesminds.com/sign-up",
@@ -91,6 +103,10 @@ export const PROVIDERS = [
     description:
       "Get $3 credit on register. Refer and earn $3 per person, up to 30 people. Backed by an official vendor domain rather than a reseller.",
     tags: ["Refer and earn $3", "up to 30 people", "unverified"],
+    modelType: "wide",
+    login: "any",
+    verification: "unverified",
+    creditUsd: 3,
     rating: 4,
     featured: true,
     baseUrl: "https://platform.xiaomimimo.com",
@@ -106,6 +122,10 @@ export const PROVIDERS = [
     description:
       "$100-$200 credit on GitHub signup depending on the referral link. Coding agents only: requests must come from Claude Code, Codex, Cline and similar, not a chat client.",
     tags: ["GitHub login only", "coding agents only", "$100-$200"],
+    modelType: "wide",
+    login: "github",
+    verification: "none",
+    creditUsd: 100,
     rating: 4.3,
     featured: true,
     baseUrl: "https://agentrouter.org/register",
@@ -120,6 +140,10 @@ export const PROVIDERS = [
     description:
       "Reported $200 credit on signup, aimed at chat models. Amount and model list could not be confirmed against a non-affiliate source.",
     tags: ["chat models", "unverified"],
+    modelType: "wide",
+    login: "any",
+    verification: "unverified",
+    creditUsd: 200,
     rating: 2.2,
     featured: false,
     baseUrl: "https://seekai.cc/sign-up",
@@ -135,6 +159,10 @@ export const PROVIDERS = [
     description:
       "Large credit grant on register, reportedly thousands of credits. Only Chinese models. Amount could not be verified against a non-affiliate source.",
     tags: ["Chinese Models only", "amount unverified"],
+    modelType: "chinese",
+    login: "any",
+    verification: "disputed",
+    creditUsd: null,
     rating: 2.6,
     featured: false,
     baseUrl: "https://api.hcnsec.cn/sign-up",
@@ -146,6 +174,10 @@ export const PROVIDERS = [
     description:
       "Register with old (before 2026) GitHub account and get $70. Only Anthropic models.",
     tags: ["Refer and get 40$", "70$ on sign up", "Github only"],
+    modelType: "anthropic",
+    login: "github",
+    verification: "none",
+    creditUsd: 70,
     rating: 4.1,
     featured: true,
     baseUrl: "https://gorouter.app/sign-up",
@@ -157,6 +189,10 @@ export const PROVIDERS = [
     description:
       "Register and get 300k tokens. Limited models in free plan but still good.",
     tags: ["Get 300k tokens with my link", "glm-5.3", "Google login", "Crypto"],
+    modelType: "wide",
+    login: "google",
+    verification: "none",
+    creditUsd: null,
     rating: 4.1,
     featured: true,
     baseUrl: "https://chat.b.ai/chat",
@@ -168,6 +204,10 @@ export const PROVIDERS = [
     description:
       "Register and get $120. Only Anthropic models. Sign up with GitHub only.",
     tags: ["120$ on signup", "Github Signup"],
+    modelType: "anthropic",
+    login: "github",
+    verification: "none",
+    creditUsd: 120,
     rating: 4.3,
     featured: true,
     baseUrl: "https://tabitoken.com/sign-up",
@@ -179,6 +219,10 @@ export const PROVIDERS = [
     description:
       "Register and get $100. Only Anthropic models. $20 daily check-in.",
     tags: ["100$ on signup", "Github Signup only"],
+    modelType: "anthropic",
+    login: "github",
+    verification: "none",
+    creditUsd: 100,
     rating: 4.2,
     featured: true,
     baseUrl: "https://api.justwoker.icu/register",
@@ -221,3 +265,18 @@ export const activeProviders = PROVIDERS.map((p) => ({
 export function categories() {
   return [...new Set(activeProviders.map((p) => p.category))].sort();
 }
+
+/** Distinct model families, for the model filter in the control deck. */
+export function modelTypes() {
+  return [...new Set(activeProviders.map((p) => p.modelType))].sort();
+}
+
+/**
+ * Total stated signup credit in dollars. Credit that is not a dollar figure
+ * (tokens, credits, disputed amounts) is excluded, so the number never mixes
+ * units. Derived from each provider's creditUsd at render time.
+ */
+export const totalCreditUsd = PROVIDERS.reduce(
+  (sum, p) => sum + (p.creditUsd ?? 0),
+  0,
+);

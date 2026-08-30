@@ -31,6 +31,7 @@ export default function App() {
   const { t, providerCopy, categoryLabel } = useI18n();
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
+  const [model, setModel] = useState("all");
   const [sort, setSort] = useState("rating");
 
   const filtered = useMemo(() => {
@@ -46,6 +47,7 @@ export default function App() {
           p.description.toLowerCase().includes(q) ||
           p.tags.some((tag) => tag.toLowerCase().includes(q)) ||
           p.category.toLowerCase().includes(q) ||
+          p.modelType.toLowerCase().includes(q) ||
           description.toLowerCase().includes(q) ||
           tags.some((tag) => tag.toLowerCase().includes(q)) ||
           categoryLabel(p.category).toLowerCase().includes(q)
@@ -55,8 +57,11 @@ export default function App() {
     if (category !== "all") {
       list = list.filter((p) => p.category === category);
     }
+    if (model !== "all") {
+      list = list.filter((p) => p.modelType === model);
+    }
     return sortProviders(list, sort);
-  }, [query, category, sort, providerCopy, categoryLabel]);
+  }, [query, category, model, sort, providerCopy, categoryLabel]);
 
   return (
     <div className="min-h-[100dvh] font-display">
@@ -127,6 +132,8 @@ export default function App() {
               onQuery={setQuery}
               category={category}
               onCategory={setCategory}
+              model={model}
+              onModel={setModel}
               sort={sort}
               onSort={setSort}
             />
@@ -150,6 +157,7 @@ export default function App() {
                 onClick={() => {
                   setQuery("");
                   setCategory("all");
+                  setModel("all");
                 }}
                 className="mt-4 inline-flex rounded-[var(--radius-control)] border border-line bg-surface px-4 py-2 text-sm text-ink-soft transition hover:border-signal hover:text-signal-deep"
               >

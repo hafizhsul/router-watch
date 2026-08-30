@@ -100,6 +100,24 @@ jobs:
             if (typeof p.rating !== "number" || p.rating < 0 || p.rating > 5) {
               fail(`${p.name}: rating ${p.rating} outside 0-5`);
             }
+            // Derived facets feed the model filter and the verification badge,
+            // so they must be valid and, where a claim is made, evidence-backed.
+            if (!["anthropic", "chinese", "wide"].includes(p.modelType)) {
+              fail(`${p.name}: modelType "${p.modelType}" invalid`);
+            }
+            if (!["github", "google", "any"].includes(p.login)) {
+              fail(`${p.name}: login "${p.login}" invalid`);
+            }
+            if (
+              !["verified", "unverified", "disputed", "none"].includes(
+                p.verification,
+              )
+            ) {
+              fail(`${p.name}: verification "${p.verification}" invalid`);
+            }
+            if (typeof p.creditUsd !== "number" && p.creditUsd !== null) {
+              fail(`${p.name}: creditUsd must be a number or null`);
+            }
           }
 
           if (categories().length === 0) fail("no categories resolved");

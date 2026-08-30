@@ -1,6 +1,6 @@
-import { ArrowRight, Compass, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight, Compass, ArrowUpRight, DotsNine } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
-import { activeProviders, buildSignupUrl } from "../data/providers";
+import { activeProviders, buildSignupUrl, totalCreditUsd } from "../data/providers";
 import Reveal from "./Reveal";
 import { useI18n } from "../i18n";
 
@@ -79,6 +79,12 @@ export default function Hero() {
                 <span className="font-mono text-sm text-muted">
                   {t("hero.count", { n: count })}
                 </span>
+                {totalCreditUsd > 0 && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-3 px-3 py-1 font-mono text-sm font-semibold text-signal-deep">
+                    <DotsNine size={16} weight="bold" />
+                    {t("hero.credit", { n: totalCreditUsd })}
+                  </span>
+                )}
               </div>
             </div>
           </Reveal>
