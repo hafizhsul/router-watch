@@ -64,34 +64,43 @@ export default function Hero() {
               className="relative flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface-3 p-6 md:p-7"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              {/* Network map backdrop (D) */}
+              {/* Network map backdrop (D). Sits in the top strip only, faint,
+                  and fades out before the content so it never reads as an
+                  overlap. The card below is opaque and z-10, so nothing can
+                  show through it either way. */}
               <svg
                 aria-hidden="true"
-                viewBox="0 0 400 260"
-                className="pointer-events-none absolute inset-0 h-full w-full"
+                viewBox="0 0 400 190"
+                preserveAspectRatio="xMidYMax slice"
+                className="pointer-events-none absolute left-0 right-0 top-0 h-44 w-full"
+                style={{
+                  maskImage:
+                    "linear-gradient(to bottom, black 45%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 45%, transparent 100%)",
+                }}
               >
                 <g stroke="var(--line-strong)" strokeWidth="1" fill="none">
-                  <path d="M70 60 C130 40 170 90 200 120" />
-                  <path d="M200 120 C230 150 260 110 320 90" />
-                  <path d="M70 60 C90 140 170 170 200 120" />
-                  <path d="M200 120 C220 190 300 190 330 150" />
-                  <path d="M320 90 C350 130 320 180 330 150" />
+                  <path d="M40 50 C80 30 120 50 150 78" />
+                  <path d="M150 78 C180 50 220 40 260 60" />
+                  <path d="M40 50 C60 100 120 110 150 78" />
+                  <path d="M260 60 C300 80 300 120 340 110" />
                 </g>
                 <g fill="var(--signal)">
-                  <circle cx="70" cy="60" r="4" />
-                  <circle cx="200" cy="120" r="6" />
-                  <circle cx="320" cy="90" r="4" />
-                  <circle cx="330" cy="150" r="3" />
+                  <circle cx="40" cy="50" r="3" />
+                  <circle cx="150" cy="78" r="4" />
+                  <circle cx="260" cy="60" r="3" />
+                  <circle cx="340" cy="110" r="2.5" />
                 </g>
                 <circle
-                  cx="200"
-                  cy="120"
-                  r="10"
+                  cx="150"
+                  cy="78"
+                  r="7"
                   fill="none"
                   stroke="var(--signal)"
                   strokeOpacity="0.35"
                   className="animate-ping"
-                  style={{ transformOrigin: "200px 120px" }}
+                  style={{ transformOrigin: "150px 78px" }}
                 />
               </svg>
 
@@ -109,8 +118,9 @@ export default function Hero() {
                   </span>
                 </div>
 
-                {/* Best offer (C) */}
-                <div className="rounded-[12px] border border-signal/30 bg-signal-soft/40 p-4">
+                {/* Best offer (C). Solid surface so content reads cleanly; the
+                    faint signal tint marks it as the highlighted offer. */}
+                <div className="rounded-[12px] border border-signal/30 bg-surface p-4">
                   <p className="m-0 font-mono text-micro uppercase tracking-[0.18em] text-signal-deep">
                     {t("hero.best.title")}
                   </p>
