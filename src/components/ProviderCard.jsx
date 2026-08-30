@@ -42,7 +42,7 @@ export default function ProviderCard({ provider }) {
 
   return (
     <article
-      className="group relative flex flex-col rounded-[var(--radius-card)] border border-line bg-surface p-5 transition hover:-translate-y-1"
+      className="group relative flex min-h-[380px] flex-col rounded-[var(--radius-card)] border border-line bg-surface p-5 transition hover:-translate-y-1"
       style={{ boxShadow: "var(--shadow-hover)" }}
     >
       <a
@@ -114,7 +114,7 @@ export default function ProviderCard({ provider }) {
         ))}
       </div>
 
-      <div className="mt-5 flex items-center justify-between border-t border-line pt-4">
+      <div className="mt-auto flex items-center justify-between border-t border-line pt-4">
         <span className="inline-flex items-center gap-1.5 font-mono text-sm font-semibold text-ink">
           <Star size={15} weight="fill" className="text-signal" />
           {provider.rating.toFixed(1)}
