@@ -118,6 +118,15 @@ jobs:
             if (typeof p.creditUsd !== "number" && p.creditUsd !== null) {
               fail(`${p.name}: creditUsd must be a number or null`);
             }
+            // models feeds the on-card model list; when present it must be an
+            // array of strings, when absent the card simply omits the list.
+            if (p.models !== undefined) {
+              if (!Array.isArray(p.models)) {
+                fail(`${p.name}: models must be an array`);
+              } else if (p.models.some((m) => typeof m !== "string")) {
+                fail(`${p.name}: models must be an array of strings`);
+              }
+            }
           }
 
           if (categories().length === 0) fail("no categories resolved");

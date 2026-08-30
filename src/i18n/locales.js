@@ -84,7 +84,8 @@ const en = {
   "order.name": "Name",
   "order.category": "Type",
 
-    "card.claim": "Claim bonus",
+      "card.claim": "Claim bonus",
+  "card.models": "Models",
   "verification.verified": "Verified",
   "verification.unverified": "Unverified",
   "verification.disputed": "Disputed",
@@ -147,7 +148,8 @@ export const LOCALES = {
     "order.name": "Nama",
     "order.category": "Jenis",
 
-        "card.claim": "Klaim bonus",
+            "card.claim": "Klaim bonus",
+    "card.models": "Model",
     "verification.verified": "Terverifikasi",
     "verification.unverified": "Belum terverifikasi",
     "verification.disputed": "Dipersoalkan",
@@ -206,7 +208,8 @@ export const LOCALES = {
     "order.name": "名前",
     "order.category": "種類",
 
-        "card.claim": "ボーナスを受け取る",
+            "card.claim": "ボーナスを受け取る",
+    "card.models": "モデル",
     "verification.verified": "確認済み",
     "verification.unverified": "未確認",
     "verification.disputed": "疑義あり",
@@ -265,7 +268,8 @@ export const LOCALES = {
     "order.name": "名称",
     "order.category": "类型",
 
-        "card.claim": "领取奖励",
+            "card.claim": "领取奖励",
+    "card.models": "模型",
     "verification.verified": "已核实",
     "verification.unverified": "未核实",
     "verification.disputed": "有争议",
@@ -324,7 +328,8 @@ export const LOCALES = {
     "order.name": "Nombre",
     "order.category": "Tipo",
 
-        "card.claim": "Reclamar bono",
+            "card.claim": "Reclamar bono",
+    "card.models": "Modelos",
     "verification.verified": "Verificado",
     "verification.unverified": "Sin verificar",
     "verification.disputed": "En disputa",
@@ -383,7 +388,8 @@ export const LOCALES = {
     "order.name": "Nome",
     "order.category": "Tipo",
 
-        "card.claim": "Resgatar bônus",
+            "card.claim": "Resgatar bônus",
+    "card.models": "Modelos",
     "verification.verified": "Verificado",
     "verification.unverified": "Não verificado",
     "verification.disputed": "Em disputa",
@@ -442,7 +448,8 @@ export const LOCALES = {
     "order.name": "Nom",
     "order.category": "Type",
 
-        "card.claim": "Réclamer la prime",
+            "card.claim": "Réclamer la prime",
+    "card.models": "Modèles",
     "verification.verified": "Vérifié",
     "verification.unverified": "Non vérifié",
     "verification.disputed": "Contesté",

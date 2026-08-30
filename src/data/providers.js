@@ -66,6 +66,11 @@ export const REFERRAL_CODES = {
  * provider `name`. Keeping param shape (aff= / ref= / invite_code=) here lets
  * each service keep its own convention.
  * modelType: "anthropic" | "chinese" | "wide" - the model family the gateway
+    models: ["Claude Opus 5", "Claude Opus 4.8"],
+    models: ["GPT-5.6", "Claude Opus 4.8", "Gemini 3.6 Flash", "DeepSeek V4", "Grok 4.6"],
+    models: ["claude-opus-4-8", "claude-opus-4-8-thinking", "claude-opus-5", "claude-opus-5-thinking"],
+    models: ["MiMo-V2.5-Pro", "MiMo-V2.5", "MiMo-V2-Flash", "MiMo-V2.5-ASR", "MiMo-V2.5-TTS"],
+    models: ["GPT-5.6 Sol", "Claude Opus 4.8", "Claude Opus 5"],
  * actually serves, derived from its description/tags.
  * login: "github" | "google" | "any" the signup auth path, from the tags.
  * verification: "verified" | "unverified" | "disputed" | "none".
@@ -109,6 +114,7 @@ export const PROVIDERS = [
     description:
       "Get $3 credit on register. Refer and earn $3 per person, up to 30 people. Backed by an official vendor domain rather than a reseller.",
     tags: ["Refer and earn $3", "up to 30 people", "unverified"],
+    models: ["MiMo-V2.5-Pro", "MiMo-V2.5", "MiMo-V2-Flash", "MiMo-V2.5-ASR", "MiMo-V2.5-TTS"],
     modelType: "wide",
     login: "any",
     verification: "verified",
@@ -133,6 +139,7 @@ export const PROVIDERS = [
     description:
       "$100-$200 credit on GitHub signup depending on the referral link. Coding agents only: requests must come from Claude Code, Codex, Cline and similar, not a chat client.",
     tags: ["GitHub login only", "coding agents only", "$100-$200"],
+    models: ["GPT-5.6 Sol", "Claude Opus 4.8", "Claude Opus 5"],
     modelType: "wide",
     login: "github",
     verification: "verified",
@@ -191,6 +198,7 @@ export const PROVIDERS = [
     description:
       "Register with old (before 2026) GitHub account and get $70. Only Anthropic models.",
     tags: ["Refer and get 40$", "70$ on sign up", "Github only"],
+    models: ["Claude Opus 5", "Claude Opus 4.8"],
     modelType: "anthropic",
     login: "github",
     verification: "verified",
@@ -212,6 +220,7 @@ export const PROVIDERS = [
     description:
       "Register and get 300k tokens. Limited models in free plan but still good.",
     tags: ["Get 300k tokens with my link", "glm-5.3", "Google login", "Crypto"],
+    models: ["GPT-5.6", "Claude Opus 4.8", "Gemini 3.6 Flash", "DeepSeek V4", "Grok 4.6"],
     modelType: "wide",
     login: "google",
     verification: "verified",
@@ -233,6 +242,7 @@ export const PROVIDERS = [
     description:
       "Register and get $120. Only Anthropic models. Sign up with GitHub only.",
     tags: ["120$ on signup", "Github Signup"],
+    models: ["claude-opus-4-8", "claude-opus-4-8-thinking", "claude-opus-5", "claude-opus-5-thinking"],
     modelType: "anthropic",
     login: "github",
     verification: "disputed",

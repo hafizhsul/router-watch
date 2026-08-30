@@ -84,6 +84,25 @@ export default function ProviderCard({ provider }) {
         {description}
       </p>
 
+      {Array.isArray(provider.models) && provider.models.length > 0 && (
+        <div className="mt-4">
+          <p className="m-0 font-mono text-2xs uppercase tracking-[0.18em] text-muted">
+            {t("card.models")}
+          </p>
+          <ul className="mt-1.5 space-y-1">
+            {provider.models.slice(0, 4).map((m) => (
+              <li
+                key={m}
+                className="flex items-center gap-2 font-mono text-xs text-ink-soft"
+              >
+                <span className="size-1 rounded-full bg-signal/60" />
+                {m}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="mt-4 flex flex-wrap items-center gap-1.5">
         {tags.slice(0, 2).map((tag) => (
           <span
