@@ -78,31 +78,6 @@ export default function App() {
             className="inline-flex min-w-0 items-center gap-2.5"
             aria-label={t("brand.home")}
           >
-            <span
-              className="grid size-9 place-items-center rounded-md"
-              style={{ backgroundColor: "var(--mark-bg)", color: "var(--mark-text)" }}
-            >
-              {/* RW monogram (single-stroke flow): the leg of R runs into the
-                  W, one continuous path. Structure-led, no network/circuit
-                  cliché. currentColor themes via --mark-text in light/dark.
-                  aria-hidden: the link carries the accessible name and the
-                  wordmark sits beside it. */}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 100 100"
-                className="size-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M16 78 V22" />
-                <path d="M16 22 H38 A13 13 0 0 1 38 48 H16" />
-                <path d="M38 48 L52 78" />
-                <path d="M56 30 L70 78 L84 30" />
-              </svg>
-            </span>
             <span className="min-w-0 leading-tight">
               <strong className="block text-sm font-semibold text-ink">
                 Router Watch
