@@ -10,7 +10,13 @@ Static site. No backend, no API keys, no database.
 
 ## Features
 
-- **9 gateways**, searchable, filterable by type, ordered by rating by default
+- **10 gateways**, searchable, filterable by type, model family, ordered by
+  rating by default
+- **Model lists** sourced from each gateway's live `/v1/models` endpoint and
+  baked into the data, so a card shows the models you can actually call, not
+  the marketing claim
+- **Each gateway's favicon** bundled locally and shown on its card; a gateway
+  whose icon is unavailable (bot-blocked) falls back to initials
 - **7 languages** with automatic detection from the browser: English, Bahasa
   Indonesia, 日本語, 简体中文, Español, Português, Français
 - Descriptions, tags and category labels are translated as well. Gateway names,
@@ -19,6 +25,8 @@ Static site. No backend, no API keys, no database.
 - Search matches the language on screen plus the English source and the gateway
   name, so a query works whichever language the visitor is reading in
 - Light and dark themes driven by `prefers-color-scheme`
+- Centered hero over a radial vignette dot grid, tinted from the theme token so
+  it adapts to both modes without a hardcoded colour
 - Referral codes live in one place. Each signup URL is built at render time
   using the query parameter that service expects (`aff`, `ref`, `invite_code`)
 - Cards are fully clickable, keyboard reachable, and open with
@@ -59,20 +67,22 @@ The build is a folder of static files, so it deploys to any static host.
 src/
   data/providers.js        gateway data + REFERRAL_CODES + buildSignupUrl()
   i18n/
-    locales.js             UI strings, 33 keys per language
+    locales.js             UI strings per language
     providerCopy.js        translated descriptions, tags, category labels
     index.jsx              I18nProvider, useI18n, t()
   components/
-    Hero.jsx               headline + top-bonus panel
-    ControlDeck.jsx        search, type filter, ordering
-    ProviderCard.jsx       one gateway card
+    Hero.jsx               centered value-prop hero + dot grid
+    ControlDeck.jsx        search, type/model filter, ordering
+    ProviderCard.jsx       one gateway card (favicon + model list)
     LanguageSwitcher.jsx   language select
     Footer.jsx
     Reveal.jsx             scroll reveal
   App.jsx                  layout, filter/sort state
   main.jsx                 entry, wraps app in I18nProvider
   index.css                theme tokens, light/dark, reduced motion
-public/                    favicons, PWA icons, web manifest
+public/
+  favicons/                gateway icons, bundled locally
+  ...                      PWA icons, web manifest
 ```
 
 ## Referral codes
@@ -114,6 +124,28 @@ Two details worth knowing before you edit this file:
 2. Add a matching key to `REFERRAL_CODES`.
 3. Optionally add translated description and tags to `src/i18n/providerCopy.js`.
    English is the fallback, so a missing translation is safe.
+
+### Models
+
+Each entry can carry a `models` array, shown on the card. Pull it from the
+gateway's live endpoint rather than guessing:
+
+```bash
+curl -s https://api.example.com/v1/models \
+  -H "Authorization: Bearer YOUR_KEY"
+```
+
+New API gateways return a token-scoped list — some models may be gated by your
+account's group. If the endpoint is login-gated or bot-blocked, leave the field
+off rather than inventing ids. Leave a comment with the fetch date and any
+allowlist caveat (see the existing entries).
+
+### Favicon
+
+Drop the gateway's icon into `public/favicons/<slug>.png` and add a
+`name -> /favicons/<slug>.png` entry to the `FAVICONS` map in
+`ProviderCard.jsx`. A gateway with no entry (or a failing image) falls back to
+an initials badge, so missing icons are safe.
 
 ## Adding a language
 
