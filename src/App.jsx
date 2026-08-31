@@ -79,10 +79,30 @@ export default function App() {
             aria-label={t("brand.home")}
           >
             <span
-              className="grid size-9 place-items-center rounded-md font-mono text-sm font-semibold"
+              className="grid size-9 place-items-center rounded-md"
               style={{ backgroundColor: "var(--mark-bg)", color: "var(--mark-text)" }}
             >
-              RW
+              {/* Routing-hub mark: central node with four routed connections,
+                  each ending in a node. Monoline, currentColor so it themes via
+                  --mark-text in light/dark. aria-hidden: the link already
+                  carries the accessible name and the wordmark sits beside it. */}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="size-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="4.2" />
+                <path d="M12 3.5v4.3M12 16.2v4.3M3.5 12h4.3M16.2 12h4.3" />
+                <circle cx="12" cy="3.5" r="1.3" fill="currentColor" stroke="none" />
+                <circle cx="12" cy="20.5" r="1.3" fill="currentColor" stroke="none" />
+                <circle cx="3.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
+                <circle cx="20.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
+              </svg>
             </span>
             <span className="min-w-0 leading-tight">
               <strong className="block text-sm font-semibold text-ink">
