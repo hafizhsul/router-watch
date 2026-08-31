@@ -184,4 +184,5 @@ contrast in both themes, honouring of `prefers-reduced-motion` and
 
 ## License
 
-No license file yet. Add one before making the repository public.
+MIT. See [LICENSE](LICENSE). The copyright covers the site code; the referral
+codes in `REFERRAL_CODES` belong to the site owner and are separate.
