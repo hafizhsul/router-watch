@@ -1,4 +1,5 @@
 import { ArrowUpRight, Star } from "@phosphor-icons/react";
+import { useState } from "react";
 import { buildSignupUrl } from "../data/providers";
 import { useI18n } from "../i18n";
 
@@ -19,6 +20,26 @@ function getInitials(name) {
     .join("");
 }
 
+/**
+ * Gateway name -> bundled favicon path. GoRouter and TaBiAi are New API
+ * installs like Bluesminds/KKToken/others, so they share the same template
+ * logo; Xiaoai Mimo and Bai ship their own. A card falls back to the initials
+ * badge when its favicon is absent or fails to load.
+ * @type {{ [name: string]: string }}
+ */
+const FAVICONS = {
+  Bluesminds: "/favicons/bluesminds.png",
+  "Xiaomi Mimo": "/favicons/xiaomi-mimo.png",
+  "Agent Router": "/favicons/agent-router.png",
+  "See Kai": "/favicons/see-kai.png",
+  Hcnsec: "/favicons/hcnsec.png",
+  GoRouter: "/favicons/gorouter.png",
+  Bai: "/favicons/bai.png",
+  TaBiAi: "/favicons/tabiai.png",
+  KKToken: "/favicons/kktoken.png",
+  JustDoWork: "/favicons/justdowork.png",
+};
+
 const VERIFICATION_STYLE = {
   verified: "bg-signal-soft text-signal-deep border-signal/30",
   unverified: "bg-paper-2 text-muted border-line",
@@ -34,11 +55,13 @@ const VERIFICATION_STYLE = {
  */
 export default function ProviderCard({ provider }) {
   const { t, providerCopy, categoryLabel } = useI18n();
+  const [faviconFailed, setFaviconFailed] = useState(false);
   const url = buildSignupUrl(provider);
   const { description, tags } = providerCopy(provider);
   const hasVerdict = ["verified", "unverified", "disputed"].includes(
     provider.verification,
   );
+  const favicon = !faviconFailed ? FAVICONS[provider.name] : undefined;
 
   return (
     <article
@@ -58,9 +81,21 @@ export default function ProviderCard({ provider }) {
               overlay link, so the badge is hidden from assistive tech. */}
           <span
             aria-hidden="true"
-            className="grid size-11 shrink-0 place-items-center rounded-[10px] bg-signal-soft font-mono text-sm font-bold tracking-tight text-signal-deep ring-1 ring-inset ring-signal/30"
+            className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-[10px] bg-signal-soft ring-1 ring-inset ring-signal/30"
           >
-            {getInitials(provider.name)}
+            {favicon ? (
+              <img
+                src={favicon}
+                alt=""
+                loading="lazy"
+                className="h-full w-full object-cover"
+                onError={() => setFaviconFailed(true)}
+              />
+            ) : (
+              <span className="font-mono text-sm font-bold tracking-tight text-signal-deep">
+                {getInitials(provider.name)}
+              </span>
+            )}
           </span>
           <div className="min-w-0">
             <p className="m-0 truncate font-mono text-2xs uppercase tracking-[0.18em] text-muted">
