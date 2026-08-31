@@ -22,9 +22,20 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
+      {/* Soft radial glow, tinted from --signal so it themes with the site
+          (emerald light/dark). Static CSS only, no WebGL, no dependency. This
+          sits behind the dot grid so the grid stays a crisp texture on top. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 70% at 50% 40%, color-mix(in srgb, var(--signal) 8%, transparent) 0%, transparent 70%)",
+        }}
+      />
       {/* Dot grid, vignetted from centre so the edges fall away behind the
-          copy. One static layer, no JS, no motion; mounted first so content
-          stacks above it. */}
+          copy. One static layer, no JS, no motion; mounted after the glow so
+          dots render above it. */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
