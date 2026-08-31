@@ -82,26 +82,25 @@ export default function App() {
               className="grid size-9 place-items-center rounded-md"
               style={{ backgroundColor: "var(--mark-bg)", color: "var(--mark-text)" }}
             >
-              {/* Routing-hub mark: central node with four routed connections,
-                  each ending in a node. Monoline, currentColor so it themes via
-                  --mark-text in light/dark. aria-hidden: the link already
-                  carries the accessible name and the wordmark sits beside it. */}
+              {/* RW monogram (single-stroke flow): the leg of R runs into the
+                  W, one continuous path. Structure-led, no network/circuit
+                  cliché. currentColor themes via --mark-text in light/dark.
+                  aria-hidden: the link carries the accessible name and the
+                  wordmark sits beside it. */}
               <svg
                 aria-hidden="true"
-                viewBox="0 0 24 24"
+                viewBox="0 0 100 100"
                 className="size-5"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.8"
+                strokeWidth="8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <circle cx="12" cy="12" r="4.2" />
-                <path d="M12 3.5v4.3M12 16.2v4.3M3.5 12h4.3M16.2 12h4.3" />
-                <circle cx="12" cy="3.5" r="1.3" fill="currentColor" stroke="none" />
-                <circle cx="12" cy="20.5" r="1.3" fill="currentColor" stroke="none" />
-                <circle cx="3.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
-                <circle cx="20.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
+                <path d="M16 78 V22" />
+                <path d="M16 22 H38 A13 13 0 0 1 38 48 H16" />
+                <path d="M38 48 L52 78" />
+                <path d="M56 30 L70 78 L84 30" />
               </svg>
             </span>
             <span className="min-w-0 leading-tight">
