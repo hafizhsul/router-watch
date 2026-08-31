@@ -126,7 +126,7 @@ body {
   color: var(--ink);
   font-family: var(--font-display);
   background:
-    radial-gradient(circle at 78% 6%, var(--glow), transparent 26rem),
+    radial-gradient(circle at 50% 12%, var(--glow), transparent 26rem),
     radial-gradient(circle at 10% 44%, var(--glow-2), transparent 22rem),
     linear-gradient(180deg, var(--paper-3) 0%, var(--paper) 52%, var(--paper-2) 100%);
 }
