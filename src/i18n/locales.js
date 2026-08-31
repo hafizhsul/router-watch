@@ -51,10 +51,10 @@ const en = {
   "brand.tagline": "Free credit, tracked",
 
   "hero.eyebrow": "Where the free credit is",
-  "hero.title.lead": "Every AI gateway with free credit,",
-  "hero.title.accent": "in one ledger.",
+  "hero.title.lead": "Compare every AI gateway's free credit",
+  "hero.title.accent": "in one place.",
   "hero.body":
-    "A working list of model gateways, resale routers, and signup bonuses. Each entry shows what you actually get, what it costs after the bonus, and how to claim it.",
+    "Each gateway with free signup credit: its bonus, the models behind it, and what it really costs after. No surprises, no hidden fees.",
   "hero.cta": "Browse gateways",
       "hero.count": "{n} gateways tracked",
   "hero.credit": "${n} in signup credit",
@@ -115,10 +115,10 @@ export const LOCALES = {
     "brand.tagline": "Kredit gratis, terpantau",
 
     "hero.eyebrow": "Tempat kredit gratis berada",
-    "hero.title.lead": "Semua gateway AI berkredit gratis,",
-    "hero.title.accent": "dalam satu papan.",
+    "hero.title.lead": "Bandingkan kredit gratis semua gateway AI",
+    "hero.title.accent": "dalam satu tempat.",
     "hero.body":
-      "Daftar aktif gateway model, router resale, dan bonus pendaftaran. Setiap entri menunjukkan apa yang kamu terima, biayanya setelah bonus habis, dan cara mengklaimnya.",
+      "Setiap gateway dengan kredit pendaftaran gratis: bonusnya, model di baliknya, dan biaya sebenarnya setelah bonus habis. Tanpa kejutan, tanpa biaya tersembunyi.",
     "hero.cta": "Lihat gateway",
         "hero.count": "{n} gateway terpantau",
     "hero.credit": "${n} kredit pendaftaran",
@@ -175,10 +175,10 @@ export const LOCALES = {
     "brand.tagline": "無料クレジットを追跡",
 
     "hero.eyebrow": "無料クレジットのある場所",
-    "hero.title.lead": "無料クレジット付きのAIゲートウェイを、",
-    "hero.title.accent": "1つの台帳に。",
+    "hero.title.lead": "すべてのAIゲートウェイの無料クレジットを",
+    "hero.title.accent": "1つの場所で比較。",
     "hero.body":
-      "モデルゲートウェイ、リセールルーター、登録ボーナスの実用的な一覧です。各項目で、実際に得られる内容、ボーナス終了後の費用、受け取り方法を確認できます。",
+      "無料登録クレジット付きの各ゲートウェイ：ボーナス、その裏にあるモデル、そして終了後の本当の費用。サプライズも隠れた手数料もありません。",
     "hero.cta": "ゲートウェイを見る",
         "hero.count": "{n} 件のゲートウェイを掲載",
     "hero.credit": "登録クレジット合計 ${n}",
@@ -235,10 +235,10 @@ export const LOCALES = {
     "brand.tagline": "追踪免费额度",
 
     "hero.eyebrow": "免费额度在哪里",
-    "hero.title.lead": "所有带免费额度的 AI 网关，",
-    "hero.title.accent": "尽在一张清单。",
+    "hero.title.lead": "比较每个 AI 网关的免费额度",
+    "hero.title.accent": "一处集中对比。",
     "hero.body":
-      "这是一份可用的清单，收录模型网关、转售路由与注册奖励。每条都说明你实际能拿到什么、额度用完后的成本，以及领取方式。",
+      "每个提供注册免费额度的网关：奖励、背后的模型，以及额度用完后真正的成本。没有意外，没有隐藏费用。",
     "hero.cta": "浏览网关",
         "hero.count": "已收录 {n} 个网关",
     "hero.credit": "注册额度合计 ${n}",
@@ -295,10 +295,10 @@ export const LOCALES = {
     "brand.tagline": "Crédito gratis, bajo seguimiento",
 
     "hero.eyebrow": "Dónde está el crédito gratis",
-    "hero.title.lead": "Todos los gateways de IA con crédito gratis,",
-    "hero.title.accent": "en un solo registro.",
+    "hero.title.lead": "Compara el crédito gratis de cada gateway de IA",
+    "hero.title.accent": "en un solo lugar.",
     "hero.body":
-      "Una lista funcional de gateways de modelos, routers de reventa y bonos de registro. Cada entrada muestra lo que recibes realmente, cuánto cuesta tras el bono y cómo reclamarlo.",
+      "Cada gateway con crédito de registro gratuito: su bono, los modelos que hay detrás y lo que realmente cuesta después. Sin sorpresas, sin cargos ocultos.",
     "hero.cta": "Ver gateways",
         "hero.count": "{n} gateways registrados",
     "hero.credit": "${n} en crédito de registro",
@@ -355,10 +355,10 @@ export const LOCALES = {
     "brand.tagline": "Crédito grátis, monitorado",
 
     "hero.eyebrow": "Onde está o crédito grátis",
-    "hero.title.lead": "Todos os gateways de IA com crédito grátis,",
-    "hero.title.accent": "em um só registro.",
+    "hero.title.lead": "Compare o crédito grátis de cada gateway de IA",
+    "hero.title.accent": "em um só lugar.",
     "hero.body":
-      "Uma lista funcional de gateways de modelos, roteadores de revenda e bônus de cadastro. Cada item mostra o que você realmente recebe, quanto custa após o bônus e como resgatar.",
+      "Cada gateway com crédito de cadastro gratuito: seu bônus, os modelos por trás e o custo real depois. Sem surpresas, sem tarifas ocultas.",
     "hero.cta": "Ver gateways",
         "hero.count": "{n} gateways monitorados",
     "hero.credit": "${n} em crédito de cadastro",
@@ -415,10 +415,10 @@ export const LOCALES = {
     "brand.tagline": "Crédit gratuit, suivi",
 
     "hero.eyebrow": "Là où se trouve le crédit gratuit",
-    "hero.title.lead": "Toutes les passerelles IA à crédit gratuit,",
-    "hero.title.accent": "en un seul registre.",
+    "hero.title.lead": "Comparez le crédit gratuit de chaque passerelle IA",
+    "hero.title.accent": "au même endroit.",
     "hero.body":
-      "Une liste à jour de passerelles de modèles, routeurs de revente et primes d'inscription. Chaque entrée indique ce que vous recevez réellement, le coût après la prime et comment la réclamer.",
+      "Chaque passerelle offrant un crédit d'inscription gratuit : sa prime, les modèles associés et le coût réel ensuite. Sans surprise, sans frais cachés.",
     "hero.cta": "Voir les passerelles",
         "hero.count": "{n} passerelles suivies",
     "hero.credit": "${n} de crédit d'inscription",
