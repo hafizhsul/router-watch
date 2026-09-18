@@ -1,16 +1,13 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
+import { useEffect, useRef } from "react";
 import { categories, modelTypes } from "../data/providers";
 import { useI18n } from "../i18n";
 
 const SORT_OPTIONS = ["featured", "rating", "name", "category"];
-const MODELS = ["anthropic", "chinese", "wide"];
 
 /**
- * Search + category + model filters + sort. Lift all state to the parent; this
- * is a controlled deck. Label-above-input, contrast-safe, no placeholder-as-
- * label.
- *
- * @param {{ query: string, onQuery: (q: string) => void, category: string, onCategory: (c: string) => void, model: string, onModel: (m: string) => void, sort: string, onSort: (s: string) => void }} props
+ * Stitch filter bar: 12-col grid (search 4 / type 3 / model 3 / order 2),
+ * 32px inputs, kbd "/" shortcut, focus border accent with no glow.
  */
 export default function ControlDeck({
   query,
@@ -23,39 +20,61 @@ export default function ControlDeck({
   onSort,
 }) {
   const { t, categoryLabel } = useI18n();
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      const tag = document.activeElement?.tagName;
+      if (e.key === "/" && tag !== "INPUT" && tag !== "SELECT" && tag !== "TEXTAREA") {
+        e.preventDefault();
+        searchRef.current?.focus();
+        searchRef.current?.select();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const inputClass =
+    "h-8 w-full rounded-md border border-line bg-card px-2.5 text-xs text-ink outline-none transition-colors placeholder:text-muted focus:border-accent";
 
   return (
-    <div className="mb-8 grid grid-cols-1 gap-4 rounded-[var(--radius-card)] border border-line bg-paper-2/60 p-4 md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_auto_auto_auto] lg:p-5">
-      <div className="relative">
+    <div className="grid grid-cols-1 items-center gap-3 rounded-xl border border-line bg-subtle p-3 sm:grid-cols-2 lg:grid-cols-12">
+      <div className="relative lg:col-span-4">
         <label htmlFor="catalog-search" className="sr-only">
           {t("filter.search.label")}
         </label>
         <MagnifyingGlass
-          size={18}
-          className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted"
+          size={16}
+          aria-hidden="true"
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted"
         />
         <input
+          ref={searchRef}
           id="catalog-search"
           type="search"
           value={query}
           onChange={(e) => onQuery(e.target.value)}
           placeholder={t("filter.search.placeholder")}
-          className="h-11 w-full rounded-[var(--radius-control)] border border-line bg-surface pl-10 pr-3 text-sm text-ink outline-none transition placeholder:text-muted focus:border-signal focus:ring-2 focus:ring-signal/30"
+          className="h-8 w-full rounded-md border border-line bg-card py-2 pl-9 pr-8 text-sm text-ink outline-none transition-colors placeholder:text-muted focus:border-accent"
         />
+        <kbd
+          aria-hidden="true"
+          className="absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded border border-line bg-card px-1 font-mono text-[10px] text-muted sm:inline-block"
+        >
+          /
+        </kbd>
       </div>
 
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-        <label
-          htmlFor="catalog-category"
-          className="text-xs font-medium text-muted"
-        >
+      <div className="flex items-center gap-2 lg:col-span-3">
+        <label htmlFor="catalog-category" className="label-caps shrink-0 text-muted">
           {t("filter.type.label")}
         </label>
         <select
           id="catalog-category"
           value={category}
           onChange={(e) => onCategory(e.target.value)}
-          className="h-11 rounded-[var(--radius-control)] border border-line bg-surface px-3 text-sm text-ink outline-none focus:border-signal focus:ring-2 focus:ring-signal/30"
+          className={inputClass}
         >
           <option value="all">{t("filter.type.all")}</option>
           {categories().map((c) => (
@@ -66,21 +85,18 @@ export default function ControlDeck({
         </select>
       </div>
 
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-        <label
-          htmlFor="catalog-model"
-          className="text-xs font-medium text-muted"
-        >
+      <div className="flex items-center gap-2 lg:col-span-3">
+        <label htmlFor="catalog-model" className="label-caps shrink-0 text-muted">
           {t("filter.model.label")}
         </label>
         <select
           id="catalog-model"
           value={model}
           onChange={(e) => onModel(e.target.value)}
-          className="h-11 rounded-[var(--radius-control)] border border-line bg-surface px-3 text-sm text-ink outline-none focus:border-signal focus:ring-2 focus:ring-signal/30"
+          className={inputClass}
         >
           <option value="all">{t("filter.model.all")}</option>
-          {MODELS.map((m) => (
+          {modelTypes().map((m) => (
             <option key={m} value={m}>
               {t(`filter.model.${m}`)}
             </option>
@@ -88,18 +104,15 @@ export default function ControlDeck({
         </select>
       </div>
 
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-        <label
-          htmlFor="catalog-sort"
-          className="text-xs font-medium text-muted"
-        >
+      <div className="flex items-center gap-2 lg:col-span-2">
+        <label htmlFor="catalog-sort" className="label-caps shrink-0 text-muted">
           {t("filter.order.label")}
         </label>
         <select
           id="catalog-sort"
           value={sort}
           onChange={(e) => onSort(e.target.value)}
-          className="h-11 rounded-[var(--radius-control)] border border-line bg-surface px-3 text-sm text-ink outline-none focus:border-signal focus:ring-2 focus:ring-signal/30"
+          className={inputClass}
         >
           {SORT_OPTIONS.map((o) => (
             <option key={o} value={o}>

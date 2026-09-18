@@ -1,15 +1,8 @@
-import { ArrowUpRight, Star } from "@phosphor-icons/react";
+import { ArrowUpRight, Star, Warning } from "@phosphor-icons/react";
 import { useState } from "react";
 import { buildSignupUrl } from "../data/providers";
 import { useI18n } from "../i18n";
 
-/**
- * Initial badge matching the original site's treatment: two uppercase letters
- * from the gateway name, one shared accent colour. The original derived these
- * with getInitials(), so there is no per-brand logo to reproduce.
- * @param {string} name
- * @returns {string}
- */
 function getInitials(name) {
   if (typeof name !== "string" || !name) return "??";
   return name
@@ -20,13 +13,6 @@ function getInitials(name) {
     .join("");
 }
 
-/**
- * Gateway name -> bundled favicon path. GoRouter and TaBiAi are New API
- * installs like Bluesminds/KKToken/others, so they share the same template
- * logo; Xiaoai Mimo and Bai ship their own. A card falls back to the initials
- * badge when its favicon is absent or fails to load.
- * @type {{ [name: string]: string }}
- */
 const FAVICONS = {
   Bluesminds: "/favicons/bluesminds.png",
   "Xiaomi Mimo": "/favicons/xiaomi-mimo.png",
@@ -40,34 +26,35 @@ const FAVICONS = {
   JustDoWork: "/favicons/justdowork.png",
 };
 
-const VERIFICATION_STYLE = {
-  verified: "bg-signal-soft text-signal-deep border-signal/30",
-  unverified: "bg-paper-2 text-muted border-line",
-  disputed: "bg-surface text-ink-soft border-signal/40",
+const DOT_COLOR = {
+  verified: "var(--badge-verified-text)",
+  disputed: "var(--badge-disputed-text)",
+  unverified: "var(--muted)",
+  none: "var(--muted)",
 };
 
 /**
- * A single gateway card. Presentational - receives the provider object.
- * Description, tags and category label are shown translated; the gateway name
- * and the rating stay as-is. A verification badge appears only when the
- * provider data carries an evidence-backed claim (verified / unverified /
- * disputed); "none" means no claim either way, so nothing is shown.
+ * Gateway card per Stitch: logo slot + category + title + status badge,
+ * description, Models roster with status dots, tags, rating footer + CTA.
+ * Whole card is one overlay link; hover only swaps the border.
  */
 export default function ProviderCard({ provider }) {
   const { t, providerCopy, categoryLabel } = useI18n();
   const [faviconFailed, setFaviconFailed] = useState(false);
   const url = buildSignupUrl(provider);
   const { description, tags } = providerCopy(provider);
-  const hasVerdict = ["verified", "unverified", "disputed"].includes(
-    provider.verification,
-  );
+  const hasVerdict = ["verified", "unverified", "disputed"].includes(provider.verification);
   const favicon = !faviconFailed ? FAVICONS[provider.name] : undefined;
 
+  const badgeStyle =
+    provider.verification === "verified"
+      ? { backgroundColor: "var(--badge-verified-bg)", color: "var(--badge-verified-text)", borderColor: "var(--badge-verified-border)" }
+      : provider.verification === "disputed"
+        ? { backgroundColor: "var(--badge-disputed-bg)", color: "var(--badge-disputed-text)", borderColor: "var(--badge-disputed-border)" }
+        : { backgroundColor: "var(--badge-unverified-bg)", color: "var(--badge-unverified-text)", borderColor: "var(--line)" };
+
   return (
-    <article
-      className="group relative flex min-h-[380px] flex-col rounded-[var(--radius-card)] border border-line bg-surface p-5 transition hover:-translate-y-1"
-      style={{ boxShadow: "var(--shadow-hover)" }}
-    >
+    <article className="gateway-card group relative flex min-h-[380px] flex-col p-5">
       <a
         href={url}
         target="_blank"
@@ -75,13 +62,11 @@ export default function ProviderCard({ provider }) {
         className="absolute inset-0 z-10 rounded-[inherit]"
         aria-label={t("card.claim.aria", { name: provider.name })}
       />
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <div className="flex min-w-0 items-start gap-3">
-          {/* Decorative: the card already carries the accessible name via the
-              overlay link, so the badge is hidden from assistive tech. */}
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-center gap-3">
           <span
             aria-hidden="true"
-            className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-[10px] bg-signal-soft ring-1 ring-inset ring-signal/30"
+            className="grid size-9 shrink-0 place-items-center overflow-hidden rounded-lg border border-line bg-subtle"
           >
             {favicon ? (
               <img
@@ -92,45 +77,46 @@ export default function ProviderCard({ provider }) {
                 onError={() => setFaviconFailed(true)}
               />
             ) : (
-              <span className="font-mono text-sm font-bold tracking-tight text-signal-deep">
+              <span className="font-display text-xs font-bold" style={{ color: "var(--accent-ink)" }}>
                 {getInitials(provider.name)}
               </span>
             )}
           </span>
           <div className="min-w-0">
-            <p className="m-0 truncate font-mono text-2xs uppercase tracking-[0.18em] text-muted">
+            <p className="label-caps m-0 truncate text-muted">
               {categoryLabel(provider.category)}
             </p>
-            <h3 className="mt-0.5 truncate text-lg font-semibold tracking-tight text-ink">
+            <h3 className="font-display mt-0.5 truncate text-base font-bold text-ink">
               {provider.name}
             </h3>
           </div>
         </div>
         {hasVerdict && (
           <span
-            className={`shrink-0 rounded-full border px-2.5 py-1 font-mono text-micro font-medium ${VERIFICATION_STYLE[provider.verification]}`}
+            className="inline-flex shrink-0 items-center gap-1 rounded border px-2 py-0.5 font-mono text-[11px] font-semibold uppercase tracking-wider"
+            style={badgeStyle}
           >
+            {provider.verification === "disputed" && <Warning size={12} aria-hidden="true" />}
             {t(`verification.${provider.verification}`)}
           </span>
         )}
       </div>
 
-      <p className="line-clamp-3 flex-1 text-sm leading-relaxed text-ink-soft">
+      <p className="line-clamp-3 flex-1 text-xs leading-relaxed text-ink-soft">
         {description}
       </p>
 
       {Array.isArray(provider.models) && provider.models.length > 0 && (
         <div className="mt-4">
-          <p className="m-0 font-mono text-2xs uppercase tracking-[0.18em] text-muted">
-            {t("card.models")}
-          </p>
-          <ul className="mt-1.5 space-y-1">
+          <p className="label-caps m-0 text-[10px] text-muted">{t("card.models")}</p>
+          <ul className="mt-1.5 space-y-0.5 font-mono text-xs text-ink">
             {provider.models.slice(0, 4).map((m) => (
-              <li
-                key={m}
-                className="flex items-center gap-2 font-mono text-xs text-ink-soft"
-              >
-                <span className="size-1 rounded-full bg-signal/60" />
+              <li key={m} className="flex items-center gap-1.5">
+                <span
+                  aria-hidden="true"
+                  className="size-1.5 rounded-full"
+                  style={{ backgroundColor: DOT_COLOR[provider.verification] ?? "var(--muted)" }}
+                />
                 {m}
               </li>
             ))}
@@ -138,31 +124,25 @@ export default function ProviderCard({ provider }) {
         </div>
       )}
 
-      <div className="mt-4 flex flex-wrap items-center gap-1.5">
+      <div className="mb-5 mt-4 flex flex-wrap items-center gap-1.5">
         {tags.slice(0, 2).map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-line px-2 py-0.5 font-mono text-micro text-ink-soft"
+            className="rounded border border-line bg-subtle px-2 py-0.5 font-mono text-[11px] text-muted"
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="mt-auto flex items-center justify-between border-t border-line pt-4">
-        <span className="inline-flex items-center gap-1.5 font-mono text-sm font-semibold text-ink">
-          <Star size={15} weight="fill" className="text-signal" />
+      <div className="mt-auto flex items-center justify-between border-t border-line pt-3">
+        <span className="inline-flex items-center gap-1 font-mono text-sm font-bold text-ink">
+          <Star size={16} weight="fill" aria-hidden="true" style={{ color: "var(--accent-ink)" }} />
           {provider.rating.toFixed(1)}
         </span>
-        {/* pointer-events-none: let clicks fall through to the overlay link
-            above, so the whole footer area is clickable. Colour still reacts
-            via group-hover on the card. */}
-        <span className="pointer-events-none inline-flex items-center gap-1 font-mono text-xs text-muted transition group-hover:text-signal-deep">
+        <span className="pointer-events-none inline-flex items-center gap-1 text-xs font-semibold transition-colors" style={{ color: "var(--accent-ink)" }}>
           {t("card.claim")}
-          <ArrowUpRight
-            size={15}
-            className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
+          <ArrowUpRight size={14} aria-hidden="true" />
         </span>
       </div>
     </article>
