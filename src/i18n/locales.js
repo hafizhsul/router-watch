@@ -89,6 +89,9 @@ const en = {
   "verification.verified": "Verified",
   "verification.unverified": "Unverified",
   "verification.none": "Unlisted",
+  "monitored.title": "Monitored gateways ({n})",
+  "monitored.body": "Synced from the aigratis.my.id directory. No signup bonus recorded yet — check the provider site.",
+  "monitored.models": "{n} models",
   "verification.disputed": "Disputed",
   "card.claim.aria": "Claim {name} signup bonus",
 
@@ -176,6 +179,9 @@ export const LOCALES = {
     "verification.verified": "Terverifikasi",
     "verification.unverified": "Belum terverifikasi",
   "verification.none": "Belum Tercatat",
+  "monitored.title": "Gateway terpantau ({n})",
+  "monitored.body": "Disinkron dari direktori aigratis.my.id. Bonus pendaftaran belum tercatat — cek situs penyedia.",
+  "monitored.models": "{n} model",
     "verification.disputed": "Dipersoalkan",
     "card.claim.aria": "Klaim bonus pendaftaran {name}",
 
@@ -259,6 +265,9 @@ export const LOCALES = {
     "verification.verified": "確認済み",
     "verification.unverified": "未確認",
   "verification.none": "未掲載",
+  "monitored.title": "監視中のゲートウェイ（{n}）",
+  "monitored.body": "aigratis.my.idのディレクトリから同期。サインアップ特典は未記録です — プロバイダーのサイトを確認してください。",
+  "monitored.models": "{n}モデル",
     "verification.disputed": "疑義あり",
     "card.claim.aria": "{name} の登録ボーナスを受け取る",
 
@@ -342,6 +351,9 @@ export const LOCALES = {
     "verification.verified": "已核实",
     "verification.unverified": "未核实",
   "verification.none": "未收录",
+  "monitored.title": "受监控网关（{n}）",
+  "monitored.body": "同步自 aigratis.my.id 目录。注册奖励暂无记录 — 请查看提供商官网。",
+  "monitored.models": "{n} 个模型",
     "verification.disputed": "有争议",
     "card.claim.aria": "领取 {name} 注册奖励",
 
@@ -425,6 +437,9 @@ export const LOCALES = {
     "verification.verified": "Verificado",
     "verification.unverified": "Sin verificar",
   "verification.none": "Sin registrar",
+  "monitored.title": "Gateways monitoreados ({n})",
+  "monitored.body": "Sincronizado del directorio aigratis.my.id. Sin bono registrado aún — revisa el sitio del proveedor.",
+  "monitored.models": "{n} modelos",
     "verification.disputed": "En disputa",
     "card.claim.aria": "Reclamar el bono de registro de {name}",
 
@@ -508,6 +523,9 @@ export const LOCALES = {
     "verification.verified": "Verificado",
     "verification.unverified": "Não verificado",
   "verification.none": "Não listado",
+  "monitored.title": "Gateways monitorados ({n})",
+  "monitored.body": "Sincronizado do diretório aigratis.my.id. Sem bônus registrado ainda — verifique o site do provedor.",
+  "monitored.models": "{n} modelos",
     "verification.disputed": "Em disputa",
     "card.claim.aria": "Resgatar o bônus de cadastro da {name}",
 
@@ -591,6 +609,9 @@ export const LOCALES = {
     "verification.verified": "Vérifié",
     "verification.unverified": "Non vérifié",
   "verification.none": "Non répertorié",
+  "monitored.title": "Passerelles surveillées ({n})",
+  "monitored.body": "Synchronisé depuis l'annuaire aigratis.my.id. Aucun bonus enregistré — vérifiez le site du fournisseur.",
+  "monitored.models": "{n} modèles",
     "verification.disputed": "Contesté",
     "card.claim.aria": "Réclamer la prime d'inscription de {name}",
 

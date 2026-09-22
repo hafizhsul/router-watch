@@ -8,6 +8,7 @@ import AuditTable from "./components/AuditTable";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import ViewSwitcher from "./components/Directory";
+import MonitoredRow from "./components/MonitoredRow";
 import { activeProviders } from "./data/providers";
 import { useI18n } from "./i18n";
 
@@ -65,6 +66,15 @@ export default function App() {
     }
     return sortProviders(list, sort);
   }, [query, category, model, sort, providerCopy, categoryLabel]);
+
+  const bonusList = useMemo(
+    () => filtered.filter((p) => p.verification !== "none"),
+    [filtered],
+  );
+  const monitoredList = useMemo(
+    () => filtered.filter((p) => p.verification === "none"),
+    [filtered],
+  );
 
   const handleQuick = (key) => {
     if (key === "verified") {
@@ -124,17 +134,17 @@ export default function App() {
           </div>
 
           <div className="mt-8">
-            {filtered.length > 0 ? (
+            {bonusList.length > 0 ? (
               view === "grid" ? (
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                  {filtered.map((p, i) => (
+                  {bonusList.map((p, i) => (
                     <Reveal key={p.name} delay={(i % 3) * 60}>
                       <ProviderCard provider={p} />
                     </Reveal>
                   ))}
                 </div>
               ) : (
-                <AuditTable providers={filtered} />
+                <AuditTable providers={bonusList} />
               )
             ) : (
               <div className="rounded-xl border border-dashed border-line-strong bg-subtle/40 p-12 text-center">
@@ -151,6 +161,20 @@ export default function App() {
               </div>
             )}
           </div>
+
+          {monitoredList.length > 0 && (
+            <div className="mt-14">
+              <h3 className="font-display text-xl font-bold tracking-tight text-ink">
+                {t("monitored.title", { n: monitoredList.length })}
+              </h3>
+              <p className="mt-1 max-w-xl text-sm text-muted">{t("monitored.body")}</p>
+              <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {monitoredList.map((p) => (
+                  <MonitoredRow key={p.name} provider={p} />
+                ))}
+              </ul>
+            </div>
+          )}
 
         </section>
       </main>

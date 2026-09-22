@@ -13,19 +13,6 @@ function getInitials(name) {
     .join("");
 }
 
-const FAVICONS = {
-  Bluesminds: "/favicons/bluesminds.png",
-  "Xiaomi Mimo": "/favicons/xiaomi-mimo.png",
-  "Agent Router": "/favicons/agent-router.png",
-  "See Kai": "/favicons/see-kai.png",
-  Hcnsec: "/favicons/hcnsec.png",
-  GoRouter: "/favicons/gorouter.png",
-  Bai: "/favicons/bai.png",
-  TaBiAi: "/favicons/tabiai.png",
-  KKToken: "/favicons/kktoken.png",
-  JustDoWork: "/favicons/justdowork.png",
-};
-
 const DOT_COLOR = {
   verified: "var(--badge-verified-text)",
   disputed: "var(--badge-disputed-text)",
@@ -44,7 +31,7 @@ export default function ProviderCard({ provider }) {
   const url = buildSignupUrl(provider);
   const { description, tags } = providerCopy(provider);
   const hasVerdict = ["verified", "unverified", "disputed", "none"].includes(provider.verification);
-  const favicon = !faviconFailed ? FAVICONS[provider.name] : undefined;
+  const favicon = !faviconFailed && provider.favicon ? provider.favicon : undefined;
 
   const badgeStyle =
     provider.verification === "verified"

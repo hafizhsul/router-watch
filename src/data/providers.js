@@ -113,6 +113,8 @@ export const PROVIDERS = [
     // platform is a first-party vendor, not a reseller. Raises from the raw
     // "unverified" tag to "verified": the models are real and the pricing is
     // confirmed, even if the $3 signup credit itself is modest.
+    favicon: "/favicons/aigratis/xiaomi-mimo.webp",
+    favicon: "/favicons/aigratis/xiaomi-mimo.webp",
     name: "Xiaomi Mimo",
     category: "Official Router",
     description:
@@ -138,6 +140,7 @@ export const PROVIDERS = [
     // "none" to "verified" because an independent source now confirms the
     // models are genuine; rating climbs accordingly but is capped by the
     // three-model default group and no SLA.
+    favicon: "/favicons/aigratis/agentrouter.webp",
     name: "Agent Router",
     category: "API routers",
     description:
@@ -226,6 +229,8 @@ export const PROVIDERS = [
     // credits), with card or crypto top-up. The reviews note it is crypto-first
     // and has a $200 monthly subscription floor plus invite gating, which is
     // why the rating is solid but not top despite the verified models.
+    favicon: "/favicons/aigratis/bai.webp",
+    favicon: "/favicons/aigratis/bai.webp",
     name: "Bai",
     category: "API routers",
     description:
@@ -307,6 +312,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/aihubmix (845 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/aihubmix.webp",
     name: "AIHubMix",
     category: "API routers",
     description:
@@ -325,6 +331,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/amd (7 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/amd.ico",
     name: "AMD AI 开发者计划",
     category: "API routers",
     description:
@@ -343,6 +350,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/apinex (30 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/apinex.webp",
     name: "APInex",
     category: "API routers",
     description:
@@ -361,6 +369,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/apmix-ai (2 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/apmix-ai.webp",
     name: "APMIX AI",
     category: "API routers",
     description:
@@ -379,6 +388,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/agentnala (31 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/agentnala.webp",
     name: "Agent Nala",
     category: "API routers",
     description:
@@ -397,6 +407,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/agnes (12 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/agnes.webp",
     name: "Agnes",
     category: "API routers",
     description:
@@ -415,6 +426,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/api-co-id (15 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/api-co-id.webp",
     name: "Api.co.id",
     category: "API routers",
     description:
@@ -433,6 +445,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/atmorouter (121 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/atmorouter.ico",
     name: "AtmoRouter",
     category: "API routers",
     description:
@@ -451,6 +464,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/atria-dawn (1 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/atria-dawn.webp",
     name: "Atria Dawn Preview",
     category: "API routers",
     description:
@@ -469,6 +483,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/ceoweb3 (25 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/ceoweb3.webp",
     name: "CEOWeb3",
     category: "API routers",
     description:
@@ -487,6 +502,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/cavoti (60 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/cavoti.webp",
     name: "Cavoti AI",
     category: "API routers",
     description:
@@ -505,6 +521,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/cline (443 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/cline.webp",
     name: "Cline",
     category: "API routers",
     description:
@@ -523,6 +540,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/cloudflare (27 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/cloudflare.webp",
     name: "Cloudflare",
     category: "API routers",
     description:
@@ -541,6 +559,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/cutad-ai (24 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/cutad-ai.webp",
     name: "CutadAI",
     category: "API routers",
     description:
@@ -559,6 +578,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/databyte-ai (4 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/databyte-ai.webp",
     name: "DataByte AI",
     category: "API routers",
     description:
@@ -577,6 +597,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/dattio-ai (41 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/dattio-ai.webp",
     name: "Dattio AI",
     category: "API routers",
     description:
@@ -595,6 +616,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/deepseek (2 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/deepseek.ico",
     name: "DeepSeek | 深度求索",
     category: "API routers",
     description:
@@ -613,6 +635,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/escavalabs (32 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/escavalabs.webp",
     name: "EscavaLabs",
     category: "API routers",
     description:
@@ -631,6 +654,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/experientallabs (500 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/experientallabs.webp",
     name: "Experiential Labs",
     category: "API routers",
     description:
@@ -649,6 +673,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/felo-ai (26 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/felo-ai.webp",
     name: "Felo",
     category: "API routers",
     description:
@@ -703,6 +728,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/gatekey (63 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/gatekey.webp",
     name: "GateKey",
     category: "API routers",
     description:
@@ -721,6 +747,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/guts-ai (51 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/guts-ai.webp",
     name: "Guts AI",
     category: "API routers",
     description:
@@ -739,6 +766,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/hemattoken (24 models, synced 2026-09-17).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/hemattoken.webp",
     name: "HematToken",
     category: "API routers",
     description:
@@ -757,6 +785,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/heraxles (4 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/heraxles.webp",
     name: "Heraxles Router",
     category: "API routers",
     description:
@@ -775,6 +804,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/holver-ai (19 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/holver-ai.webp",
     name: "HolverAI",
     category: "API routers",
     description:
@@ -793,6 +823,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/inceptions (2 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/inceptions.webp",
     name: "Inception",
     category: "API routers",
     description:
@@ -811,6 +842,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/inferx (11 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/inferx.webp",
     name: "InferX",
     category: "API routers",
     description:
@@ -829,6 +861,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/infron (459 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/infron.webp",
     name: "Infron",
     category: "API routers",
     description:
@@ -847,6 +880,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/inxoralabs (39 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/inxoralabs.webp",
     name: "InxoraLabs",
     category: "API routers",
     description:
@@ -865,6 +899,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/jembatan-ai (6 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/jembatan-ai.webp",
     name: "JembatanAI",
     category: "API routers",
     description:
@@ -883,6 +918,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/kieai (208 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/kieai.ico",
     name: "Kie AI",
     category: "API routers",
     description:
@@ -901,6 +937,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/kiosapi (27 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/kiosapi.webp",
     name: "KiosAPI",
     category: "API routers",
     description:
@@ -919,6 +956,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/kiraai (54 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/kiraai.webp",
     name: "Kira AI",
     category: "API routers",
     description:
@@ -937,6 +975,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/minimax (8 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/minimax.ico",
     name: "MiniMax",
     category: "API routers",
     description:
@@ -955,6 +994,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/modelscope (33 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/modelscope.ico",
     name: "ModelScope",
     category: "API routers",
     description:
@@ -973,6 +1013,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nvidia-nim (82 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nvidia-nim.ico",
     name: "NVIDIA NIM APIs",
     category: "API routers",
     description:
@@ -991,6 +1032,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nanogpt (599 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nanogpt.webp",
     name: "NanoGPT",
     category: "API routers",
     description:
@@ -1009,6 +1051,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nararouter (50 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nararouter.webp",
     name: "NaraRouter",
     category: "API routers",
     description:
@@ -1027,6 +1070,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/netraruntime (2 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/netraruntime.webp",
     name: "Netra Runtime",
     category: "API routers",
     description:
@@ -1045,6 +1089,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nexarouter (29 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nexarouter.webp",
     name: "NexaRouter",
     category: "API routers",
     description:
@@ -1063,6 +1108,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nilovr-ai (40 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nilovr-ai.svg",
     name: "NilovrAI",
     category: "API routers",
     description:
@@ -1081,6 +1127,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/novita-ai (120 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/novita-ai.ico",
     name: "Novita AI",
     category: "API routers",
     description:
@@ -1099,6 +1146,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/on-token (35 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/on-token.webp",
     name: "ON Token",
     category: "API routers",
     description:
@@ -1117,6 +1165,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/ollama (20 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/ollama.webp",
     name: "Ollama",
     category: "API routers",
     description:
@@ -1135,6 +1184,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/openai (136 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/openai.webp",
     name: "OpenAI",
     category: "API routers",
     description:
@@ -1153,6 +1203,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/opencode (76 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/opencode.webp",
     name: "OpenCode",
     category: "API routers",
     description:
@@ -1171,6 +1222,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/orcarouter (197 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/orcarouter.webp",
     name: "OrcaRouter",
     category: "API routers",
     description:
@@ -1189,6 +1241,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/osiris (53 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/osiris.webp",
     name: "Osiris",
     category: "API routers",
     description:
@@ -1207,6 +1260,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/routeopen (5 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/routeopen.webp",
     name: "RouteOpen",
     category: "API routers",
     description:
@@ -1225,6 +1279,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/routeway-ai (263 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/routeway-ai.webp",
     name: "Routeway",
     category: "API routers",
     description:
@@ -1243,6 +1298,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/snifox-ai (10 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/snifox-ai.webp",
     name: "SnifoxAI",
     category: "API routers",
     description:
@@ -1261,6 +1317,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/solvatra-ai (5 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/solvatra-ai.webp",
     name: "Solvatra AI",
     category: "API routers",
     description:
@@ -1279,6 +1336,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/sumopod (59 models, synced 2026-09-19).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/sumopod.ico",
     name: "SumoPod",
     category: "API routers",
     description:
@@ -1297,6 +1355,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/tokenharbor (53 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/tokenharbor.webp",
     name: "Token Harbor",
     category: "API routers",
     description:
@@ -1315,6 +1374,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/tokenrouter (140 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/tokenrouter.webp",
     name: "TokenRouter",
     category: "API routers",
     description:
@@ -1333,6 +1393,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/unikey (44 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/unikey.webp",
     name: "UNIKEY",
     category: "API routers",
     description:
@@ -1369,6 +1430,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/venice (118 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/venice.webp",
     name: "Venice",
     category: "API routers",
     description:
@@ -1387,6 +1449,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/z-ai (16 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/z-ai.webp",
     name: "Z.ai",
     category: "API routers",
     description:
@@ -1405,6 +1468,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/zanslab (17 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/zanslab.webp",
     name: "ZansLab AI",
     category: "API routers",
     description:
@@ -1423,6 +1487,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/zenmux (194 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/zenmux.webp",
     name: "ZenMux",
     category: "API routers",
     description:
@@ -1441,6 +1506,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/llm-kita (34 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/llm-kita.webp",
     name: "llm-kita",
     category: "API routers",
     description:
@@ -1459,6 +1525,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/nusarouter (39 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/nusarouter.webp",
     name: "nusarouter",
     category: "API routers",
     description:
@@ -1477,6 +1544,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/xkiro (111 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/xkiro.webp",
     name: "xKiro",
     category: "API routers",
     description:
@@ -1495,6 +1563,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/zrouter (22 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/zrouter.webp",
     name: "zrouter",
     category: "API routers",
     description:
@@ -1513,6 +1582,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/vikey (25 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/vikey.svg",
     name: "Vikey AI",
     category: "API routers",
     description:
@@ -1531,6 +1601,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/kenari (80 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/kenari.webp",
     name: "Kenari",
     category: "API routers",
     description:
@@ -1549,6 +1620,7 @@ export const PROVIDERS = [
   {
     // aigratis.my.id/provider/openrouter (443 models, synced 2026-09-21).
     // No signup-bonus info in source; verification none, rating 0.
+    favicon: "/favicons/aigratis/openrouter.webp",
     name: "OpenRouter",
     category: "API routers",
     description:
