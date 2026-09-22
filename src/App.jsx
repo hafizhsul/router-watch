@@ -8,9 +8,7 @@ import AuditTable from "./components/AuditTable";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import ViewSwitcher from "./components/Directory";
-import { MatrixPage, StatusPage } from "./components/PlaceholderPages";
 import { activeProviders } from "./data/providers";
-import { useRoute } from "./router";
 import { useI18n } from "./i18n";
 
 function sortProviders(list, sort) {
@@ -39,7 +37,6 @@ export default function App() {
   const [model, setModel] = useState("all");
   const [sort, setSort] = useState("rating");
   const [view, setView] = useState("grid");
-  const route = useRoute();
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -99,17 +96,11 @@ export default function App() {
       <Header />
 
       <main id="top">
-        {route === "matrix" ? (
-          <MatrixPage />
-        ) : route === "status" ? (
-          <StatusPage />
-        ) : (
-          <>
-            <Hero />
-            <QuickFilters onQuick={handleQuick} onReset={handleReset} />
+        <Hero />
+        <QuickFilters onQuick={handleQuick} onReset={handleReset} />
 
-            <section id="directory" className="site-shell scroll-mt-24 py-10 lg:py-14" aria-labelledby="catalog-title">
-              <div className="flex flex-col gap-6">
+        <section id="directory" className="site-shell scroll-mt-24 py-10 lg:py-14" aria-labelledby="catalog-title">
+          <div className="flex flex-col gap-6">
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div>
                 <h2 id="catalog-title" className="font-display text-2xl font-bold tracking-tight text-ink md:text-[32px] md:leading-10">
@@ -161,9 +152,7 @@ export default function App() {
             )}
           </div>
 
-            </section>
-          </>
-        )}
+        </section>
       </main>
 
       <Footer />
