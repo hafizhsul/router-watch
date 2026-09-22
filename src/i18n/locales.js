@@ -88,6 +88,7 @@ const en = {
   "card.models": "Models",
   "verification.verified": "Verified",
   "verification.unverified": "Unverified",
+  "verification.none": "Unlisted",
   "verification.disputed": "Disputed",
   "card.claim.aria": "Claim {name} signup bonus",
 
@@ -174,6 +175,7 @@ export const LOCALES = {
     "card.models": "Model",
     "verification.verified": "Terverifikasi",
     "verification.unverified": "Belum terverifikasi",
+  "verification.none": "Belum Tercatat",
     "verification.disputed": "Dipersoalkan",
     "card.claim.aria": "Klaim bonus pendaftaran {name}",
 
@@ -256,6 +258,7 @@ export const LOCALES = {
     "card.models": "モデル",
     "verification.verified": "確認済み",
     "verification.unverified": "未確認",
+  "verification.none": "未掲載",
     "verification.disputed": "疑義あり",
     "card.claim.aria": "{name} の登録ボーナスを受け取る",
 
@@ -338,6 +341,7 @@ export const LOCALES = {
     "card.models": "模型",
     "verification.verified": "已核实",
     "verification.unverified": "未核实",
+  "verification.none": "未收录",
     "verification.disputed": "有争议",
     "card.claim.aria": "领取 {name} 注册奖励",
 
@@ -420,6 +424,7 @@ export const LOCALES = {
     "card.models": "Modelos",
     "verification.verified": "Verificado",
     "verification.unverified": "Sin verificar",
+  "verification.none": "Sin registrar",
     "verification.disputed": "En disputa",
     "card.claim.aria": "Reclamar el bono de registro de {name}",
 
@@ -502,6 +507,7 @@ export const LOCALES = {
     "card.models": "Modelos",
     "verification.verified": "Verificado",
     "verification.unverified": "Não verificado",
+  "verification.none": "Não listado",
     "verification.disputed": "Em disputa",
     "card.claim.aria": "Resgatar o bônus de cadastro da {name}",
 
@@ -584,6 +590,7 @@ export const LOCALES = {
     "card.models": "Modèles",
     "verification.verified": "Vérifié",
     "verification.unverified": "Non vérifié",
+  "verification.none": "Non répertorié",
     "verification.disputed": "Contesté",
     "card.claim.aria": "Réclamer la prime d'inscription de {name}",
 

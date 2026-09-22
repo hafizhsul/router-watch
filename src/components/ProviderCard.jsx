@@ -43,7 +43,7 @@ export default function ProviderCard({ provider }) {
   const [faviconFailed, setFaviconFailed] = useState(false);
   const url = buildSignupUrl(provider);
   const { description, tags } = providerCopy(provider);
-  const hasVerdict = ["verified", "unverified", "disputed"].includes(provider.verification);
+  const hasVerdict = ["verified", "unverified", "disputed", "none"].includes(provider.verification);
   const favicon = !faviconFailed ? FAVICONS[provider.name] : undefined;
 
   const badgeStyle =

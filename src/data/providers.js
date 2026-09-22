@@ -304,6 +304,1266 @@ export const PROVIDERS = [
     baseUrl: "https://api.justwoker.icu/register",
     codeParam: "aff",
   },
+  {
+    // aigratis.my.id/provider/aihubmix (845 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "AIHubMix",
+    category: "API routers",
+    description:
+      "Access leading AI models through one unified, OpenAI-compatible API. Connect to ChatGPT, Claude, Gemini, DeepSeek, Doubao, Qwen and more through a single endpoint.",
+    tags: ["845 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://aihubmix.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/amd (7 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "AMD AI 开发者计划",
+    category: "API routers",
+    description:
+      "AMD AI Developer Program",
+    tags: ["7 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://developer.amd.com.cn",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/apinex (30 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "APInex",
+    category: "API routers",
+    description:
+      "One API key for OpenAI-compatible models, web research, Twitter/X and voice. One token balance, ~10× cheaper than official rates.",
+    tags: ["30 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://apinex.bond",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/apmix-ai (2 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "APMIX AI",
+    category: "API routers",
+    description:
+      "One cheap plan from $4.99/month covers GPT, Claude, Gemini, Grok, DeepSeek and Qwen on a single API key. OpenAI- and Anthropic-compatible; works with Claude Code, Codex CLI and Cursor.",
+    tags: ["2 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://apmix.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/agentnala (31 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Agent Nala",
+    category: "API routers",
+    description:
+      "Claude Opus 5, GPT-5.6, DeepSeek V4 Pro, dan Kimi K2.7 / GLM-5.3 — dalam satu API kompatibel Anthropic & OpenAI.",
+    tags: ["31 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://gateway.aplikasinala.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/agnes (12 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Agnes",
+    category: "API routers",
+    description:
+      "Agnes is an agentic consumer app accessible for everyone to think, create and co-vibe together.",
+    tags: ["12 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://platform.agnes-ai.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/api-co-id (15 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Api.co.id",
+    category: "API routers",
+    description:
+      "Api.co.id adalah Provider API Terlengkap di Indonesia, mulai dari api wilayah indonesia, api kode pos, api cek ongkir, api cek rekening, dll",
+    tags: ["15 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://api.co.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/atmorouter (121 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "AtmoRouter",
+    category: "API routers",
+    description:
+      "One API key. Every frontier model. Pay per million tokens at a fraction of official pricing.",
+    tags: ["121 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://atmorouter.dev",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/atria-dawn (1 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Atria Dawn Preview",
+    category: "API routers",
+    description:
+      "Atria Dawn Preview 面向科研、工程与 Agent 任务，将复杂问题推进为可验证成果。",
+    tags: ["1 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://atria-asi.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/ceoweb3 (25 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "CEOWeb3",
+    category: "API routers",
+    description:
+      "Akses Claude, GPT, Gemini, DeepSeek, dan model AI lainnya lewat satu API key. Harga hemat, credit fleksibel, redeem instan.",
+    tags: ["25 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ceoweb3.dev",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/cavoti (60 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Cavoti AI",
+    category: "API routers",
+    description:
+      "Cavoti AI is a multi-provider API platform where developers can compare independent providers by model, price, performance and data policy, then connect through one OpenAI-compatible API.",
+    tags: ["60 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://cavoti.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/cline (443 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Cline",
+    category: "API routers",
+    description:
+      "Cline Dashboard",
+    tags: ["443 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://app.cline.bot",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/cloudflare (27 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Cloudflare",
+    category: "API routers",
+    description:
+      "Welcome to Cloudflare - Powering the next generation of applications",
+    tags: ["27 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://cloudflare.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/cutad-ai (24 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "CutadAI",
+    category: "API routers",
+    description:
+      "Satu API key untuk berbagai model AI. Kelola rate limit, usage analytics, webhook, dan billing dalam satu dashboard profesional.",
+    tags: ["24 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ai.cutad.web.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/databyte-ai (4 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "DataByte AI",
+    category: "API routers",
+    description:
+      "Anti token boncos. Request based AI. Pasang ke Claude Code, OpenCode, Databyte Agent langsung jalan.",
+    tags: ["4 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ai.databyte.co.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/dattio-ai (41 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Dattio AI",
+    category: "API routers",
+    description:
+      "Paket token AI sekali bayar dengan checkout QRIS otomatis via Mayar. API key dikirim setelah pembayaran terverifikasi.",
+    tags: ["41 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://dattio.my.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/deepseek (2 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "DeepSeek | 深度求索",
+    category: "API routers",
+    description:
+      "深度求索（DeepSeek），探索未至之境。专注于研究世界领先的通用人工智能底层模型与技术，开源 DeepSeek-V4、DeepSeek-R1 等前沿大模型。和 DeepSeek AI 对话，轻松接入 API。",
+    tags: ["2 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://deepseek.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/escavalabs (32 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "EscavaLabs",
+    category: "API routers",
+    description:
+      "The AI infrastructure developers deserve. Simple, reliable, and built to scale.",
+    tags: ["32 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://escavalabs.dpdns.org",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/experientallabs (500 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Experiential Labs",
+    category: "API routers",
+    description:
+      "One API key for every model: hosted providers, your own keys, your own GPUs. Routing, access control, and attribution for everything your agents call.",
+    tags: ["500 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://experientiallabs.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/felo-ai (26 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Felo",
+    category: "API routers",
+    description:
+      "Build search, agent, document, and model-powered applications with Felo API Platform.",
+    tags: ["26 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://felo.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/gregateway (26 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Fregateway",
+    category: "API routers",
+    description:
+      "Access 16 top AI models through a single OpenAI-compatible endpoint. Auto-failover, clear per-token pricing, prepaid credits.",
+    tags: ["26 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://fregateway.biz.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/gate-ai (9 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Gate AI",
+    category: "API routers",
+    description:
+      "API AI murah untuk semua model. Tanpa drama.",
+    tags: ["9 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://gateai.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/gatekey (63 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "GateKey",
+    category: "API routers",
+    description:
+      "Akses model AI pilihan melalui satu endpoint yang kompatibel dengan OpenAI.",
+    tags: ["63 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ai.gatekey.cloud",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/guts-ai (51 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Guts AI",
+    category: "API routers",
+    description:
+      "The unified interface for every AI model. Starts from Rp 10.000 ($0.60 USDT) with non-expiring balance. Pay only for what you actually use.",
+    tags: ["51 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://gutsai.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/hemattoken (24 models, synced 2026-09-17).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "HematToken",
+    category: "API routers",
+    description:
+      "Sambungkan 191 provider lewat satu endpoint. Hemat token otomatis, pantau biaya real-time. Mulai Rp10.000/bulan.",
+    tags: ["24 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://hemattoken.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/heraxles (4 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Heraxles Router",
+    category: "API routers",
+    description:
+      "Akses model AI lewat endpoint kompatibel OpenAI. Satu key untuk seluruh katalog model, tanpa hitungan per token.",
+    tags: ["4 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://heraxles.dev",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/holver-ai (19 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "HolverAI",
+    category: "API routers",
+    description:
+      "Access the best AI models like Claude Sonnet via API. Top up balance, buy quota, and start using right away.",
+    tags: ["19 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://holver.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/inceptions (2 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Inception",
+    category: "API routers",
+    description:
+      "We are leveraging diffusion technology to develop a new generation of LLMs. Our dLLMs are much faster and more efficient than traditional autoregressive LLMs.",
+    tags: ["2 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://inceptionlabs.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/inferx (11 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "InferX",
+    category: "API routers",
+    description:
+      "Production-ready Endpoints for open models and Sovereign Endpoints™ powered by the InferX runtime.",
+    tags: ["11 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://inferx.net",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/infron (459 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Infron",
+    category: "API routers",
+    description:
+      "Enterprise-grade platform for models and agents — unified API, unified billing, deploy in minutes, with dedicated throughput and SLA-backed performance.",
+    tags: ["459 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://infron.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/inxoralabs (39 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "InxoraLabs",
+    category: "API routers",
+    description:
+      "Connect Claude Code, Cursor, custom agents, and developer apps to Claude, GPT, DeepSeek, GLM, and Xera through one compatible AI API.",
+    tags: ["39 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://labs.inxorastudio.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/jembatan-ai (6 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "JembatanAI",
+    category: "API routers",
+    description:
+      "Klaim 1 juta token gratis di Telegram, dapat API key di chat, pakai Claude Code / Codex / Cline / Cursor lewat satu endpoint.",
+    tags: ["6 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://jembatanai.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/kieai (208 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Kie AI",
+    category: "API routers",
+    description:
+      "Access the best AI models for AI chat, video, image, and music in one API. Get a free API key, stable performance, and pricing lower than Replicate.",
+    tags: ["208 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://kie.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/kiosapi (27 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "KiosAPI",
+    category: "API routers",
+    description:
+      "One production-ready gateway for AI provider routing, failover, billing, and observability.",
+    tags: ["27 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://kiosapi.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/kiraai (54 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Kira AI",
+    category: "API routers",
+    description:
+      "Trải nghiệm hệ sinh thái AI đỉnh cao với chatbot AI, tạo hình ảnh nghệ thuật, giọng nói tự nhiên và video chất lượng cao. API chất lượng và tốc độ",
+    tags: ["54 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://kiraai.vn",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/minimax (8 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "MiniMax",
+    category: "API routers",
+    description:
+      "Building AGI with our mission Intelligence with Everyone. Global leader in multi-modal models and AI-native products with over 200 million users.",
+    tags: ["8 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://www.minimax.io",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/modelscope (33 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "ModelScope",
+    category: "API routers",
+    description:
+      "ModelScope",
+    tags: ["33 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://modelscope.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nvidia-nim (82 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "NVIDIA NIM APIs",
+    category: "API routers",
+    description:
+      "Experience the leading models to build enterprise generative AI apps now.",
+    tags: ["82 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://build.nvidia.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nanogpt (599 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "NanoGPT",
+    category: "API routers",
+    description:
+      "Access the newest AI models including ChatGPT, Claude, Gemini, Deepseek, and image/video models. Pay-as-you-go or subscribe. Local history by default.",
+    tags: ["599 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://nano-gpt.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nararouter (50 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "NaraRouter",
+    category: "API routers",
+    description:
+      "Access free and affordable AI models through one OpenAI-compatible API. NaraRouter gives developers fast routing, simple pricing, and one unified AI gateway.",
+    tags: ["50 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://router.bynara.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/netraruntime (2 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Netra Runtime",
+    category: "API routers",
+    description:
+      "Run production AI with lower latency and higher throughput. Use Netra Cloud's OpenAI-compatible API or deploy Netra Runtime on your own GPU infrastructure.",
+    tags: ["2 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://netraruntime.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nexarouter (29 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "NexaRouter",
+    category: "API routers",
+    description:
+      "Satu API untuk semua model AI. Akses OpenAI, Anthropic, Google, DeepSeek, Qwen, dan lainnya dengan routing stabil dan billing Indonesia.",
+    tags: ["29 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://router.nexaworks.web.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nilovr-ai (40 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "NilovrAI",
+    category: "API routers",
+    description:
+      "Bayar seperlunya. Satu API key untuk Claude, GPT, Gemini, DeepSeek, dan lainnya. Topup kredit via QRIS, tanpa langganan.",
+    tags: ["40 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://nilovr.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/novita-ai (120 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Novita AI",
+    category: "API routers",
+    description:
+      "Novita AI provides 200+ Model APIs, custom deployment, GPU Instances, and Serverless GPUs. Scale AI, optimize performance, and innovate with ease and efficiency.",
+    tags: ["120 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://novita.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/on-token (35 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "ON Token",
+    category: "API routers",
+    description:
+      "Gateway LLM Indonesia. Satu API key sk-ont- untuk Claude Sonnet, DeepSeek V4 Flash, GLM Flash, hingga Gemini. Top up QRIS mulai Rp1.000, bonus awal Rp10.000, tanpa kartu kredit.",
+    tags: ["35 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ontoken.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/ollama (20 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Ollama",
+    category: "API routers",
+    description:
+      "Ollama is the easiest way to automate your work using open models, while keeping your data safe.",
+    tags: ["20 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://ollama.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/openai (136 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "OpenAI",
+    category: "API routers",
+    description:
+      "We believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems.",
+    tags: ["136 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://openai.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/opencode (76 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "OpenCode",
+    category: "API routers",
+    description:
+      "OpenCode - The open source coding agent.",
+    tags: ["76 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://opencode.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/orcarouter (197 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "OrcaRouter",
+    category: "API routers",
+    description:
+      "One OpenAI-compatible AI gateway for production AI — adaptive routing, load balancing, guardrails, agent firewall, observability and governance across 200+ models.",
+    tags: ["197 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://orcarouter.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/osiris (53 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Osiris",
+    category: "API routers",
+    description:
+      "Ship with Claude, GPT, Gemini, DeepSeek and more through OpenAI, Anthropic, or Responses APIs. One key, observable usage, resilient routing.",
+    tags: ["53 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://osiris-code.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/routeopen (5 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "RouteOpen",
+    category: "API routers",
+    description:
+      "Build with multiple AI providers through one OpenAI-compatible API.",
+    tags: ["5 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://hashneuron.space",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/routeway-ai (263 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Routeway",
+    category: "API routers",
+    description:
+      "Access DeepSeek, Claude, Gemini, MiniMax, and 100+ AI models through one unified, OpenAI-compatible API.",
+    tags: ["263 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://routeway.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/snifox-ai (10 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "SnifoxAI",
+    category: "API routers",
+    description:
+      "AI Gateway platform — unified API access to multiple AI models at competitive pricing",
+    tags: ["10 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://snifoxai.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/solvatra-ai (5 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Solvatra AI",
+    category: "API routers",
+    description:
+      "Satu API untuk semua model AI. Routing, fallback otomatis, cache, guardrails, dan observability dalam satu gateway produksi.",
+    tags: ["5 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://solvatra.web.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/sumopod (59 models, synced 2026-09-19).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "SumoPod",
+    category: "API routers",
+    description:
+      "Simplify container and application purchasing with SumoPod",
+    tags: ["59 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://sumopod.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/tokenharbor (53 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Token Harbor",
+    category: "API routers",
+    description:
+      "A secure, unified API gateway for the world's leading AI models — one OpenAI-compatible endpoint, encrypted keys, automatic failover, and transparent per-token pricing. Free access to DeepSeek V4 Flash and MiMo V2.5.",
+    tags: ["53 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://tokenharbor.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/tokenrouter (140 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "TokenRouter",
+    category: "API routers",
+    description:
+      "A unified AI model hub for aggregation and distribution. TokenRouter converts leading LLMs into OpenAI, Claude, and Gemini compatible APIs with centralized management for individuals and enterprises.",
+    tags: ["140 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://tokenrouter.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/unikey (44 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "UNIKEY",
+    category: "API routers",
+    description:
+      "Unified AI API gateway and admin dashboard.",
+    tags: ["44 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://www.getunikey.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/unorouter (259 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Unorouter",
+    category: "API routers",
+    description:
+      "AI gateway. Bonus signup tidak tercatat — cek situs penyedia.",
+    tags: ["259 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://unorouter.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/venice (118 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Venice",
+    category: "API routers",
+    description:
+      "Try Venice.ai for free. Generate text, images, characters and video using private and unbiased AI.",
+    tags: ["118 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://venice.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/z-ai (16 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Z.ai",
+    category: "API routers",
+    description:
+      "Meet Z.ai, the AI assistant powered by GLM-5.3-Flash. Build websites, write code, handle long-horizon tasks, and get instant answers. Fast, smart, and reliable.",
+    tags: ["16 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://z.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/zanslab (17 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "ZansLab AI",
+    category: "API routers",
+    description:
+      "AI gateway. Bonus signup tidak tercatat — cek situs penyedia.",
+    tags: ["17 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://zanslab.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/zenmux (194 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "ZenMux",
+    category: "API routers",
+    description:
+      "The Enterprise LLM Platform: Unified API for 100+ AI models (Claude, GPT, Gemini, DeepSeek), intelligent routing, and AI Model Insurance that compensates for subpar output.",
+    tags: ["194 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://zenmux.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/llm-kita (34 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "llm-kita",
+    category: "API routers",
+    description:
+      "llm-kita adalah gateway API untuk AI generatif. Satu kunci untuk video generation, image generation, text-to-speech, dan speech-to-text. OpenAI-compatible, tanpa vendor lock-in.",
+    tags: ["34 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://llm-kita.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/nusarouter (39 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "nusarouter",
+    category: "API routers",
+    description:
+      "One endpoint, one key, one bill, and one price per model that does not move.",
+    tags: ["39 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://nusarouter.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/xkiro (111 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "xKiro",
+    category: "API routers",
+    description:
+      "Access DeepSeek, Claude, ChatGPT, Gemini and hundreds more models — one API key, compatible with both OpenAI and Anthropic.",
+    tags: ["111 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://xkiro.com",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/zrouter (22 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "zrouter",
+    category: "API routers",
+    description:
+      "zcloud resells GPT, Claude, Gemini & 30+ models at ~5% of official pricing. One OpenAI-compatible API key, prepaid token plans from $1, crypto & QRIS payments.",
+    tags: ["22 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://zrouter.dev",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/vikey (25 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Vikey AI",
+    category: "API routers",
+    description:
+      "AI gateway murah dengan model lengkap",
+    tags: ["25 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://vikey.ai",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/kenari (80 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "Kenari",
+    category: "API routers",
+    description:
+      "Gateway AI lokal Indonesia",
+    tags: ["80 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://kenari.id",
+    codeParam: "ref",
+  },
+  {
+    // aigratis.my.id/provider/openrouter (443 models, synced 2026-09-21).
+    // No signup-bonus info in source; verification none, rating 0.
+    name: "OpenRouter",
+    category: "API routers",
+    description:
+      "Router ke ratusan model, harga transparan",
+    tags: ["443 models", "bonus unlisted"],
+    models: [],
+    modelType: "wide",
+    login: "any",
+    verification: "none",
+    creditUsd: null,
+    rating: 0,
+    featured: false,
+    baseUrl: "https://openrouter.ai",
+    codeParam: "ref",
+  },
 ];
 
 /**
@@ -331,11 +1591,16 @@ export function buildSignupUrl(p) {
   return `${p.baseUrl}${joiner}${query}`;
 }
 
-/** Active providers, code attached. Use this everywhere. */
+/** Active providers, code attached. Ranked: bonus-carrying first by rating, unlisted last. */
 export const activeProviders = PROVIDERS.map((p) => ({
   ...p,
   code: REFERRAL_CODES[p.name] ?? "",
-}));
+})).sort((a, b) => {
+  const au = a.verification === "none" ? 1 : 0;
+  const bu = b.verification === "none" ? 1 : 0;
+  if (au !== bu) return au - bu;
+  return b.rating - a.rating;
+});
 
 /** Distinct categories, for the filter control deck. */
 export function categories() {
