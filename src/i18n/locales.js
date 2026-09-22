@@ -43,18 +43,7 @@ const en = {
   "meta.title": "Router Watch | Free Credit AI Gateway Board",
   "meta.description":
     "Router Watch: every AI gateway with free signup credit, in one board. Compare bonuses, models, and restrictions before you sign up.",
-
-  "nav.gateway": "Gateway",
-
-  "nav.all-gateways": "All Gateways",
-
-  "nav.comparison-matrix": "Comparison Matrix",
-
-  "nav.verification-faq": "Verification FAQ",
-
-  "nav.api-status": "API Status",
   "nav.language": "Language",
-  "nav.primary": "Primary",
   "brand.home": "Router Watch home",
   "brand.tagline": "Free credit, tracked",
 
@@ -148,18 +137,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | Papan Gateway AI Berkredit Gratis",
     "meta.description":
       "Router Watch: semua gateway AI dengan kredit daftar gratis, dalam satu papan. Bandingkan bonus, model, dan batasannya sebelum kamu mendaftar.",
-
-    "nav.gateway": "Gateway",
-
-    "nav.all-gateways": "Semua Gateway",
-
-    "nav.comparison-matrix": "Matriks Perbandingan",
-
-    "nav.verification-faq": "FAQ Verifikasi",
-
-    "nav.api-status": "Status API",
     "nav.language": "Bahasa",
-    "nav.primary": "Utama",
     "brand.home": "Beranda Router Watch",
     "brand.tagline": "Kredit gratis, terpantau",
 
@@ -249,18 +227,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | 無料クレジット付きAIゲートウェイ一覧",
     "meta.description":
       "Router Watch: 登録クレジットがもらえるAIゲートウェイを1つのボードにまとめました。登録前にボーナス・モデル・制限事項を比較できます。",
-
-    "nav.gateway": "ゲートウェイ",
-
-    "nav.all-gateways": "全ゲートウェイ",
-
-    "nav.comparison-matrix": "比較マトリックス",
-
-    "nav.verification-faq": "検証FAQ",
-
-    "nav.api-status": "APIステータス",
     "nav.language": "言語",
-    "nav.primary": "メイン",
     "brand.home": "Router Watch ホーム",
     "brand.tagline": "無料クレジットを追跡",
 
@@ -350,18 +317,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | 免费额度 AI 网关一览",
     "meta.description":
       "Router Watch：汇总所有提供注册免费额度的 AI 网关。注册前先比较额度、模型与限制条件。",
-
-    "nav.gateway": "网关",
-
-    "nav.all-gateways": "全部网关",
-
-    "nav.comparison-matrix": "对比矩阵",
-
-    "nav.verification-faq": "核验问答",
-
-    "nav.api-status": "API 状态",
     "nav.language": "语言",
-    "nav.primary": "主导航",
     "brand.home": "Router Watch 首页",
     "brand.tagline": "追踪免费额度",
 
@@ -451,18 +407,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | Panel de Gateways IA con Crédito Gratis",
     "meta.description":
       "Router Watch: todos los gateways de IA con crédito gratis de registro, en un solo panel. Compara bonos, modelos y restricciones antes de registrarte.",
-
-    "nav.gateway": "Gateway",
-
-    "nav.all-gateways": "Todos los gateways",
-
-    "nav.comparison-matrix": "Matriz comparativa",
-
-    "nav.verification-faq": "Preguntas de verificación",
-
-    "nav.api-status": "Estado de la API",
     "nav.language": "Idioma",
-    "nav.primary": "Principal",
     "brand.home": "Inicio de Router Watch",
     "brand.tagline": "Crédito gratis, bajo seguimiento",
 
@@ -552,18 +497,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | Painel de Gateways de IA com Crédito Grátis",
     "meta.description":
       "Router Watch: todos os gateways de IA com crédito grátis de cadastro, em um só painel. Compare bônus, modelos e restrições antes de se inscrever.",
-
-    "nav.gateway": "Gateway",
-
-    "nav.all-gateways": "Todos os gateways",
-
-    "nav.comparison-matrix": "Matriz comparativa",
-
-    "nav.verification-faq": "Perguntas de verificação",
-
-    "nav.api-status": "Estado da API",
     "nav.language": "Idioma",
-    "nav.primary": "Principal",
     "brand.home": "Início do Router Watch",
     "brand.tagline": "Crédito grátis, monitorado",
 
@@ -653,18 +587,7 @@ export const LOCALES = {
     "meta.title": "Router Watch | Tableau des Passerelles IA à Crédit Gratuit",
     "meta.description":
       "Router Watch : toutes les passerelles IA offrant un crédit d'inscription gratuit, réunies sur un seul tableau. Comparez bonus, modèles et restrictions avant de vous inscrire.",
-
-    "nav.gateway": "Passerelles",
-
-    "nav.all-gateways": "Toutes les passerelles",
-
-    "nav.comparison-matrix": "Matrice comparative",
-
-    "nav.verification-faq": "FAQ de vérification",
-
-    "nav.api-status": "État de l’API",
     "nav.language": "Langue",
-    "nav.primary": "Principal",
     "brand.home": "Accueil Router Watch",
     "brand.tagline": "Crédit gratuit, suivi",
 
