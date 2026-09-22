@@ -28,10 +28,6 @@ export default function Hero() {
     <section className="border-b border-line bg-canvas py-12 lg:py-16">
       <div className="site-shell flex flex-col items-center text-center">
         <Reveal>
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-subtle px-3 py-1 font-mono text-xs text-muted">
-            <span aria-hidden="true" className="size-2 rounded-full" style={{ backgroundColor: "var(--badge-verified-text)" }} />
-            {t("hero.ribbon")}
-          </p>
           <h1 className="font-display mx-auto max-w-3xl text-4xl font-bold leading-[1.15] tracking-tight text-ink md:text-5xl">
             {t("hero.title.lead")}{" "}
             <em className={accentClass} style={{ color: "var(--accent-ink)" }}>
@@ -41,7 +37,7 @@ export default function Hero() {
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted">
             {t("hero.body")}
           </p>
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href="#directory" className="cta-primary">
               {t("hero.cta.count", { n: count })}
               <ArrowDown size={17} weight="bold" />

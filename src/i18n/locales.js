@@ -46,8 +46,6 @@ const en = {
   "nav.language": "Language",
   "brand.home": "Router Watch home",
   "brand.tagline": "Free credit, tracked",
-
-  "hero.ribbon": "Independent Ledger • Continuous Bot Audits • 0% Affiliate Weight",
   "hero.title.lead": "Compare every AI gateway's free credit",
   "hero.title.accent": "in one place.",
   "hero.body":
@@ -140,8 +138,6 @@ export const LOCALES = {
     "nav.language": "Bahasa",
     "brand.home": "Beranda Router Watch",
     "brand.tagline": "Kredit gratis, terpantau",
-
-    "hero.ribbon": "Ledger Independen • Audit Bot Berkelanjutan • 0% Bobot Afiliasi",
     "hero.title.lead": "Bandingkan kredit gratis semua gateway AI",
     "hero.title.accent": "dalam satu tempat.",
     "hero.body":
@@ -230,8 +226,6 @@ export const LOCALES = {
     "nav.language": "言語",
     "brand.home": "Router Watch ホーム",
     "brand.tagline": "無料クレジットを追跡",
-
-    "hero.ribbon": "独立台帳 • 継続的なBot監査 • アフィリエイト比重0%",
     "hero.title.lead": "すべてのAIゲートウェイの無料クレジットを",
     "hero.title.accent": "1つの場所で比較。",
     "hero.body":
@@ -320,8 +314,6 @@ export const LOCALES = {
     "nav.language": "语言",
     "brand.home": "Router Watch 首页",
     "brand.tagline": "追踪免费额度",
-
-    "hero.ribbon": "独立台账 • 持续机器人审计 • 0% 推广权重",
     "hero.title.lead": "比较每个 AI 网关的免费额度",
     "hero.title.accent": "一处集中对比。",
     "hero.body":
@@ -410,8 +402,6 @@ export const LOCALES = {
     "nav.language": "Idioma",
     "brand.home": "Inicio de Router Watch",
     "brand.tagline": "Crédito gratis, bajo seguimiento",
-
-    "hero.ribbon": "Libro independiente • Auditorías continuas con bots • 0% peso de afiliados",
     "hero.title.lead": "Compara el crédito gratis de cada gateway de IA",
     "hero.title.accent": "en un solo lugar.",
     "hero.body":
@@ -500,8 +490,6 @@ export const LOCALES = {
     "nav.language": "Idioma",
     "brand.home": "Início do Router Watch",
     "brand.tagline": "Crédito grátis, monitorado",
-
-    "hero.ribbon": "Livro independente • Auditorias contínuas com bots • 0% peso de afiliados",
     "hero.title.lead": "Compare o crédito grátis de cada gateway de IA",
     "hero.title.accent": "em um só lugar.",
     "hero.body":
@@ -590,8 +578,6 @@ export const LOCALES = {
     "nav.language": "Langue",
     "brand.home": "Accueil Router Watch",
     "brand.tagline": "Crédit gratuit, suivi",
-
-    "hero.ribbon": "Registre indépendant • Audits continus par bots • 0% de poids d’affiliation",
     "hero.title.lead": "Comparez le crédit gratuit de chaque passerelle IA",
     "hero.title.accent": "au même endroit.",
     "hero.body":
