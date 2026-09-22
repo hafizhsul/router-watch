@@ -1,4 +1,4 @@
-import { ArrowDown, ShieldCheck } from "@phosphor-icons/react";
+import { ArrowDown } from "@phosphor-icons/react";
 import { activeProviders } from "../data/providers";
 import Reveal from "./Reveal";
 import { useI18n } from "../i18n";
@@ -41,10 +41,6 @@ export default function Hero() {
             <a href="#directory" className="cta-primary">
               {t("hero.cta.count", { n: count })}
               <ArrowDown size={17} weight="bold" />
-            </a>
-            <a href="#methodology-brief" className="cta-secondary">
-              <ShieldCheck size={16} className="text-muted" />
-              {t("hero.cta.criteria")}
             </a>
           </div>
         </Reveal>

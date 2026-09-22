@@ -7,7 +7,7 @@ import ProviderCard from "./components/ProviderCard";
 import AuditTable from "./components/AuditTable";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
-import ViewSwitcher, { Methodology } from "./components/Directory";
+import ViewSwitcher from "./components/Directory";
 import { activeProviders } from "./data/providers";
 import { useI18n } from "./i18n";
 
@@ -152,7 +152,6 @@ export default function App() {
             )}
           </div>
 
-          <Methodology />
         </section>
       </main>
 

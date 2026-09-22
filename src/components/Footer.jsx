@@ -18,9 +18,6 @@ export default function Footer() {
             <p className="max-w-xl text-xs text-muted">{t("footer.about")}</p>
           </div>
           <nav aria-label={t("footer.nav")} className="flex flex-wrap items-center gap-4 text-xs">
-            <a href="#methodology-brief" className="text-muted transition-colors hover:text-ink">
-              {t("footer.methodology")}
-            </a>
             <a
               href="https://github.com/hafizhsul/router-watch/issues/new"
               target="_blank"
@@ -28,9 +25,6 @@ export default function Footer() {
               className="text-muted transition-colors hover:text-ink"
             >
               {t("footer.submit")}
-            </a>
-            <a href="#methodology-brief" className="text-muted transition-colors hover:text-ink">
-              {t("footer.standards")}
             </a>
             <a
               href="https://github.com/hafizhsul/router-watch/issues/new"
